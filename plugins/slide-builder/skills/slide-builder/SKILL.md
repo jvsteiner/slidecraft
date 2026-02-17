@@ -7,15 +7,21 @@ description: Build PowerPoint presentations from YAML content using SlideCraft. 
 
 You are building a PowerPoint presentation using the SlideCraft library. SlideCraft generates PPTX files from YAML content with themed layouts.
 
-## Library Location
+## Setup
 
-The SlideCraft library is at `/Users/jamie/Code/martin/slide-skill/`. It must be installed in a virtualenv before use:
+Before first use, install SlideCraft:
 
 ```bash
-cd /Users/jamie/Code/martin/slide-skill
-source .venv/bin/activate
-python3 -m slidecraft build <content.yaml> <output.pptx>
+pip install git+https://github.com/jvsteiner/slidecraft.git
 ```
+
+Verify it's available:
+
+```bash
+slidecraft layouts
+```
+
+If `slidecraft` is already installed, skip installation.
 
 ## Workflow
 
@@ -23,6 +29,18 @@ python3 -m slidecraft build <content.yaml> <output.pptx>
 2. **Create a YAML content file** with theme configuration and slide definitions
 3. **Build the PPTX** using the SlideCraft CLI
 4. **Iterate** — user reviews the output and requests changes to the YAML
+
+## Build Command
+
+```bash
+slidecraft build /path/to/content.yaml /path/to/output.pptx
+```
+
+Or equivalently:
+
+```bash
+python3 -m slidecraft build /path/to/content.yaml /path/to/output.pptx
+```
 
 ## YAML Structure
 
@@ -345,15 +363,3 @@ Closing slide with CTA.
 - **Brand colors**: Override `primary` and `primary_dark`
 - **Custom fonts**: Use any installed system font via `font_display` and `font_body`
 - All image paths are relative to the YAML file location
-
-## Build Command
-
-```bash
-cd /Users/jamie/Code/martin/slide-skill
-source .venv/bin/activate
-python3 -m slidecraft build /path/to/content.yaml /path/to/output.pptx
-```
-
-## Example
-
-Full working demo at: `/Users/jamie/Code/martin/slide-skill/examples/demo/content.yaml`

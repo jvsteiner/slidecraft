@@ -1,0 +1,12 @@
+{
+  "name": "slide-builder",
+  "description": "Build PowerPoint presentations from YAML content using SlideCraft",
+  "version": "0.1.0",
+  "author": {
+    "name": "Jamie Steiner",
+    "email": "jamie@agent-otto.com"
+  },
+  "homepage": "https://github.com/jvsteiner/slidecraft",
+  "license": "MIT",
+  "keywords": ["slides", "powerpoint", "pptx", "presentation", "yaml"]
+}
