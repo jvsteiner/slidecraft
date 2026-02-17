@@ -1,10 +1,10 @@
 # Ember — Warm, confident. Think editorial, boutique, brand strategy.
-# Fonts: DM Serif Display (display) + DM Sans (body) — warm serif meets clean sans.
+# Fonts: Canela Text (display) + Gill Sans (body) — warm serif meets humanist sans.
 # Palette: Warm white ground, burnt orange accent, stone neutrals.
 
 theme:
-  font_display: "DM Serif Display"
-  font_body: "DM Sans"
+  font_display: "Canela Text"
+  font_body: "Gill Sans"
   colors:
     bg: "#FFFBF5"
     surface: "#FFF7ED"

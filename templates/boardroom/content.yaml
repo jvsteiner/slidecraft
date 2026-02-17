@@ -1,10 +1,10 @@
 # Boardroom — Clean corporate. Think McKinsey, Bain, board meetings.
-# Fonts: Inter (display + body) — neutral, authoritative, ultra-readable.
+# Fonts: Helvetica Neue (display + body) — neutral, authoritative, ultra-readable.
 # Palette: White ground, navy accent, slate grays.
 
 theme:
-  font_display: "Inter"
-  font_body: "Inter"
+  font_display: "Helvetica Neue"
+  font_body: "Helvetica Neue"
   colors:
     bg: "#FFFFFF"
     surface: "#F8FAFC"

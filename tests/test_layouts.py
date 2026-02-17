@@ -5,8 +5,8 @@ from slidecraft import DeckBuilder, get_layout, list_layouts
 
 
 THEME_CONFIG = {
-    'font_display': 'Calibri',
-    'font_body': 'Calibri',
+    'font_display': 'Helvetica Neue',
+    'font_body': 'Helvetica Neue',
     'colors': {
         'bg': '#FFFFFF',
         'surface': '#F5F5F5',

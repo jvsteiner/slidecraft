@@ -1,10 +1,10 @@
 # Signal — Bold, energetic. Think Product Hunt launch, YC Demo Day, consumer app.
-# Fonts: Plus Jakarta Sans (display + body) — geometric, friendly, high-energy.
+# Fonts: Rockwell (display) + Avenir (body) — bold slab-serif meets clean geometric sans.
 # Palette: White ground, vivid purple accent, lavender surface tones.
 
 theme:
-  font_display: "Plus Jakarta Sans"
-  font_body: "Plus Jakarta Sans"
+  font_display: "Rockwell"
+  font_body: "Avenir"
   colors:
     bg: "#FFFFFF"
     surface: "#FAF5FF"

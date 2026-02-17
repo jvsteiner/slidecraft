@@ -48,8 +48,8 @@ class Theme:
     """Resolve named colors, fonts, and spacing from config."""
 
     def __init__(self, config: dict):
-        self.font_display = config.get('font_display', 'Calibri')
-        self.font_body = config.get('font_body', 'Calibri')
+        self.font_display = config.get('font_display', 'Helvetica Neue')
+        self.font_body = config.get('font_body', 'Helvetica Neue')
 
         self._colors = {}
         merged = {**DEFAULT_COLORS, **config.get('colors', {})}

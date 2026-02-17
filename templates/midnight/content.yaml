@@ -1,10 +1,10 @@
 # Midnight — Dark, technical. Think Vercel, Linear, developer tools.
-# Fonts: Space Grotesk (display) + Inter (body) — geometric, modern, precise.
+# Fonts: Futura (display) + Avenir Next (body) — geometric, modern, precise.
 # Palette: Dark slate ground, sky-blue accent, cool grays.
 
 theme:
-  font_display: "Space Grotesk"
-  font_body: "Inter"
+  font_display: "Futura"
+  font_body: "Avenir Next"
   colors:
     bg: "#0F172A"
     surface: "#1E293B"

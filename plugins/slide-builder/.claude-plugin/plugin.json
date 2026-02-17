@@ -1,7 +1,7 @@
 {
   "name": "slide-builder",
   "description": "Build PowerPoint presentations from YAML content using SlideCraft",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": {
     "name": "Jamie Steiner",
     "email": "jamie@agent-otto.com"

@@ -365,8 +365,8 @@ SlideCraft ships with 6 templates. Each is a complete theme block you can drop i
 Clean corporate. Think McKinsey, Bain, board meetings. White ground, navy accent.
 ```yaml
 theme:
-  font_display: "Inter"
-  font_body: "Inter"
+  font_display: "Helvetica Neue"
+  font_body: "Helvetica Neue"
   colors:
     bg: "#FFFFFF"
     surface: "#F8FAFC"
@@ -388,8 +388,8 @@ theme:
 Dark, technical. Think Vercel, Linear, developer tools. Dark slate ground, sky-blue accent.
 ```yaml
 theme:
-  font_display: "Space Grotesk"
-  font_body: "Inter"
+  font_display: "Futura"
+  font_body: "Avenir Next"
   colors:
     bg: "#0F172A"
     surface: "#1E293B"
@@ -411,8 +411,8 @@ theme:
 Warm, confident. Think editorial, boutique, brand strategy. Warm white ground, burnt orange accent.
 ```yaml
 theme:
-  font_display: "DM Serif Display"
-  font_body: "DM Sans"
+  font_display: "Canela Text"
+  font_body: "Gill Sans"
   colors:
     bg: "#FFFBF5"
     surface: "#FFF7ED"
@@ -434,8 +434,8 @@ theme:
 Minimal, editorial. Think Apple keynote, Dieter Rams. Pure white, near-black text, red as the only accent.
 ```yaml
 theme:
-  font_display: "Cormorant Garamond"
-  font_body: "Lato"
+  font_display: "Didot"
+  font_body: "Optima"
   colors:
     bg: "#FFFFFF"
     surface: "#FAFAFA"
@@ -457,8 +457,8 @@ theme:
 Earth tones, natural. Think sustainability, wellness, organic brands. Warm off-white, forest green accent.
 ```yaml
 theme:
-  font_display: "Libre Baskerville"
-  font_body: "Source Sans 3"
+  font_display: "Baskerville"
+  font_body: "Charter"
   colors:
     bg: "#FAFAF5"
     surface: "#F0EFE7"
@@ -480,8 +480,8 @@ theme:
 Bold, energetic. Think Product Hunt, YC Demo Day, consumer app. White ground, vivid purple accent.
 ```yaml
 theme:
-  font_display: "Plus Jakarta Sans"
-  font_body: "Plus Jakarta Sans"
+  font_display: "Rockwell"
+  font_body: "Avenir"
   colors:
     bg: "#FFFFFF"
     surface: "#FAF5FF"
@@ -505,4 +505,4 @@ theme:
 - **Brand colors**: Override `primary` and `primary_dark` on any template
 - **Custom fonts**: Use any installed system font via `font_display` and `font_body`
 - All image paths are relative to the YAML file location
-- Templates use Google Fonts — install them for best results, or PowerPoint will substitute
+- Templates use macOS system fonts (Helvetica Neue, Futura, Avenir, Didot, Baskerville, etc.) — all pre-installed on Mac. On Windows, PowerPoint will substitute with similar fonts

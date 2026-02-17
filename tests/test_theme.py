@@ -7,8 +7,8 @@ from slidecraft.theme import Theme, DEFAULT_COLORS, DEFAULT_SPACING
 class TestThemeDefaults:
     def test_default_fonts(self):
         t = Theme({})
-        assert t.font_display == 'Calibri'
-        assert t.font_body == 'Calibri'
+        assert t.font_display == 'Helvetica Neue'
+        assert t.font_body == 'Helvetica Neue'
 
     def test_default_colors_loaded(self):
         t = Theme({})

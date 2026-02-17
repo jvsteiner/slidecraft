@@ -7,8 +7,8 @@ from slidecraft import DeckBuilder
 
 MINIMAL_YAML = """\
 theme:
-  font_display: Calibri
-  font_body: Calibri
+  font_display: Helvetica Neue
+  font_body: Helvetica Neue
 
 slides:
   - layout: title

@@ -21,13 +21,16 @@ class TitleLayout(BaseLayout):
         bar_x = (13.333 - 0.8) / 2 if align == 'center' else m
         p.accent_bar(slide, bar_x, 2.0)
 
-        # Title
-        p.text_box(slide, m, 2.15, cw, 1.2,
-                   content.get('title', ''),
-                   size=72, color='text', bold=True,
+        # Title — scale font size down for long titles
+        title_text = content.get('title', '')
+        title_size = 72 if len(title_text) <= 20 else 54 if len(title_text) <= 40 else 42
+        title_h = 1.2 if title_size >= 54 else 0.9
+        p.text_box(slide, m, 2.15, cw, title_h,
+                   title_text,
+                   size=title_size, color='text', bold=True,
                    align=align, heading=True)
 
-        y = 3.5
+        y = 2.15 + title_h + 0.15
 
         # Tagline (optional)
         if content.get('tagline'):

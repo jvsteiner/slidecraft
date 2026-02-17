@@ -1,10 +1,10 @@
 # Ink — Minimal, editorial. Think Apple keynote, Dieter Rams, The New Yorker.
-# Fonts: Cormorant Garamond (display) + Lato (body) — elegant serif headlines, clean sans body.
+# Fonts: Didot (display) + Optima (body) — high-contrast serif meets elegant sans.
 # Palette: Pure white ground, near-black text, red as the only accent.
 
 theme:
-  font_display: "Cormorant Garamond"
-  font_body: "Lato"
+  font_display: "Didot"
+  font_body: "Optima"
   colors:
     bg: "#FFFFFF"
     surface: "#FAFAFA"
