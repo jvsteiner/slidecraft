@@ -1,0 +1,158 @@
+theme:
+  font_display: Calibri
+  font_body: Calibri
+  colors:
+    bg: "#FFFFFF"
+    surface: "#F5F5F5"
+    primary: "#2563EB"
+    primary_dark: "#1D4ED8"
+    text: "#111111"
+    text_secondary: "#444444"
+    text_muted: "#888888"
+    text_dim: "#AAAAAA"
+    divider: "#E5E5E5"
+    row_alt: "#FAFAFA"
+    border: "#E0E0E0"
+    danger: "#EF4444"
+    success: "#059669"
+    warning: "#EA580C"
+
+slides:
+  # 1. Title slide
+  - layout: title
+    title: SlideCraft
+    tagline: Build decks from YAML.
+    subtitle: A demo of all 12 layouts
+    footer: "Built with SlideCraft v0.1"
+
+  # 2. Section break
+  - layout: section
+    number: "01"
+    title: Text Layouts
+    subtitle: Content, columns, and bullets
+
+  # 3. Content slide — bullets
+  - layout: content
+    title: Why SlideCraft?
+    subtitle: Simple, powerful, repeatable
+    body:
+      - YAML-driven content — edit text without touching code
+      - 12 canonical layouts covering 95% of presentation needs
+      - Theme system with named colors, fonts, and spacing
+      - Pure Python — no browser, no React, no Puppeteer
+
+  # 4. Content slide — numbered
+  - layout: content
+    title: Getting Started
+    variant: numbered
+    body:
+      - Install with pip install slidecraft
+      - Write your content in YAML
+      - Run python3 -m slidecraft build content.yaml output.pptx
+      - Open output.pptx in PowerPoint or Keynote
+
+  # 5. Two-column layout
+  - layout: two_column
+    title: Before & After
+    subtitle: Content-code separation
+    variant: "50_50"
+    left:
+      heading: Before
+      bullets:
+        - Content hardcoded in Python
+        - Every text change means editing code
+        - No reusable layouts
+    right:
+      heading: After
+      bullets:
+        - Content lives in YAML
+        - Edit text without touching code
+        - 12 reusable layouts
+
+  # 6. Three-column layout
+  - layout: three_column
+    title: Core Concepts
+    columns:
+      - icon: "📄"
+        heading: Content
+        body: YAML files define what goes on each slide — text, data, images.
+      - icon: "🎨"
+        heading: Theme
+        body: Named colors, fonts, and spacing tokens ensure visual consistency.
+      - icon: "📐"
+        heading: Layouts
+        body: 12 layout types handle positioning, so you focus on content.
+
+  # 7. Comparison table
+  - layout: comparison
+    title: How We Compare
+    headers: ["Feature", "SlideCraft", "Manual PPTX", "Google Slides"]
+    rows:
+      - ["YAML content", "Yes", "No", "No"]
+      - ["Themed layouts", "Yes", "No", "Limited"]
+      - ["Version control", "Yes", "No", "No"]
+      - ["Batch generation", "Yes", "No", "No"]
+      - ["No browser needed", "Yes", "Yes", "No"]
+    highlight_column: 1
+
+  # 8. Data table
+  - layout: data_table
+    title: Layout Coverage
+    table:
+      - ["Layout", "Use Case", "Content Zones"]
+      - ["title", "Opening slide", "title, tagline, subtitle, footer"]
+      - ["section", "Section divider", "number, title, subtitle"]
+      - ["content", "Body text/bullets", "title, body, variant"]
+      - ["two_column", "Side-by-side", "title, left, right, variant"]
+      - ["three_column", "Feature cards", "title, columns"]
+      - ["image_text", "Image + text", "title, image, text"]
+      - ["comparison", "Feature matrix", "title, headers, rows"]
+      - ["data_table", "Data display", "title, table, sidebar"]
+      - ["quote", "Testimonial", "quote, attribution, role"]
+      - ["profile", "Team bios", "title, profiles"]
+      - ["metrics", "KPI display", "title, metrics"]
+      - ["closing", "CTA/closing", "title, headline, contact"]
+    footer: "All layouts accept an optional subtitle field."
+
+  # 9. Metrics
+  - layout: metrics
+    title: By the Numbers
+    subtitle: SlideCraft at a glance
+    metrics:
+      - value: "12"
+        label: Layouts
+        context: covering 95% of needs
+      - value: "~800"
+        label: Lines of Code
+        context: pure Python
+      - value: "0"
+        label: Dependencies on JS
+        context: no browser required
+
+  # 10. Quote
+  - layout: quote
+    title: Testimonial
+    quote: "I used to spend hours fiddling with slide positions. Now I just edit YAML and rebuild in seconds."
+    attribution: A Happy User
+    role: Presentation Builder
+
+  # 11. Profile — single
+  - layout: profile
+    title: Built By
+    profiles:
+      - name: SlideCraft Team
+        role: Open Source
+        company: "github.com/slidecraft"
+        bio: "SlideCraft was born from the frustration of manually building investor pitch decks. We believe content and layout should be separate concerns."
+
+  # 12. Closing
+  - layout: closing
+    title: Try SlideCraft
+    headline: Build better decks, faster.
+    bullets:
+      - pip install slidecraft
+      - Write YAML, run build, open PPTX
+      - Customize themes and layouts to match your brand
+    contact:
+      url: "github.com/slidecraft"
+    closing: "Made with Python and good intentions."

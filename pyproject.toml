@@ -1,0 +1,21 @@
+[project]
+name = "slidecraft"
+version = "0.1.0"
+description = "Build PowerPoint decks from YAML content with themed layouts"
+requires-python = ">=3.10"
+dependencies = [
+    "python-pptx>=1.0.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
