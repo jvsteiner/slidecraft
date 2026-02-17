@@ -18,140 +18,272 @@ theme:
     warning: "#EA580C"
 
 slides:
-  # 1. Title
+
+  # ── 1. TITLE ──────────────────────────────────────────────
   - layout: title
     title: SlideCraft
     tagline: Build decks from YAML.
-    subtitle: A demo of all 21 layouts
-    footer: "Built with SlideCraft v0.1"
+    subtitle: A complete showcase of all 21 layouts
+    footer: "Photos by Pexels  |  Built with SlideCraft v0.1"
 
-  # 2. Section break
+  # ── 2. SECTION ────────────────────────────────────────────
   - layout: section
     number: "01"
-    title: Text Layouts
-    subtitle: Content, columns, and bullets
+    title: Two-Column Layouts
+    subtitle: Four permutations of text and image zones
 
-  # 3. Content — bullets
-  - layout: content
-    title: Why SlideCraft?
-    subtitle: Simple, powerful, repeatable
-    body:
-      - YAML-driven content — edit text without touching code
-      - 21 layout types covering every common slide need
-      - Theme system with named colors, fonts, and spacing
-      - Pure Python — no browser, no React, no Puppeteer
-
-  # 4. Content — numbered
-  - layout: content
-    title: Getting Started
-    variant: numbered
-    body:
-      - Install with pip install slidecraft
-      - Write your content in YAML
-      - Run python3 -m slidecraft build content.yaml output.pptx
-      - Open output.pptx in PowerPoint or Keynote
-
-  # 5. Two-column text | text
+  # ── 3. two_col_text_text ──────────────────────────────────
   - layout: two_col_text_text
-    title: Before & After
-    subtitle: Content-code separation
+    title: The Old Way vs. The New Way
+    subtitle: "Layout: two_col_text_text"
     variant: "50_50"
     left:
-      heading: Before
+      heading: Manual Slide Building
       bullets:
-        - Content hardcoded in Python
-        - Every text change means editing code
-        - No reusable layouts
+        - Open PowerPoint, stare at blank slide
+        - Drag text boxes pixel by pixel
+        - Copy-paste formatting between slides
+        - Redo everything when content changes
     right:
-      heading: After
+      heading: SlideCraft
       bullets:
-        - Content lives in YAML
-        - Edit text without touching code
-        - 21 reusable layouts
+        - Write content in YAML
+        - Pick a layout for each slide
+        - Run one command to build
+        - Edit YAML and rebuild in seconds
 
-  # 6. Three-column text | text | text
+  # ── 4. two_col_text_image ─────────────────────────────────
+  - layout: two_col_text_image
+    title: Where Ideas Take Shape
+    subtitle: "Layout: two_col_text_image"
+    variant: "50_50"
+    left:
+      heading: Your Workspace, Your Rules
+      body: "Great presentations start with focus. A clean desk, a hot coffee, and a YAML file. No design degree required — SlideCraft handles the layout while you handle the thinking."
+    right:
+      image: images/workspace.jpg
+      caption: "Photo by Thirdman on Pexels"
+
+  # ── 5. two_col_image_text ─────────────────────────────────
+  - layout: two_col_image_text
+    title: Built for Teams
+    subtitle: "Layout: two_col_image_text"
+    variant: "40_60"
+    left: images/team-collab.jpg
+    right:
+      heading: Collaborate on Content, Not Formatting
+      bullets:
+        - YAML files live in version control
+        - Designers own the theme, writers own the content
+        - Rebuild the whole deck after a merge
+        - No more emailing PowerPoint files back and forth
+
+  # ── 6. two_col_image_image ────────────────────────────────
+  - layout: two_col_image_image
+    title: Day and Night
+    subtitle: "Layout: two_col_image_image"
+    left:
+      image: images/tokyo-sunset.jpg
+      caption: "Tokyo at sunset"
+    right:
+      image: images/mountains.jpg
+      caption: "Patagonia, Argentina"
+
+  # ── 7. SECTION ────────────────────────────────────────────
+  - layout: section
+    number: "02"
+    title: Three-Column Equal Layouts
+    subtitle: Four permutations of equal-width text and image zones
+
+  # ── 8. three_col_text_text_text ───────────────────────────
   - layout: three_col_text_text_text
-    title: Core Concepts
+    title: Three Pillars
+    subtitle: "Layout: three_col_text_text_text"
     left:
       heading: Content
-      body: YAML files define what goes on each slide — text, data, images.
+      body: "YAML files define what goes on each slide. Text, bullet lists, images, tables — all declared, never dragged."
     center:
       heading: Theme
-      body: Named colors, fonts, and spacing tokens ensure visual consistency.
+      body: "Named colors, fonts, and spacing tokens. Change your accent color in one line and it propagates to every slide."
     right:
       heading: Layouts
-      body: 21 layout types handle positioning, so you focus on content.
+      body: "21 layout types handle positioning and proportions. You focus on what to say, not where to put it."
 
-  # 7. Comparison table
+  # ── 9. three_col_text_image_text ──────────────────────────
+  - layout: three_col_text_image_text
+    title: The Developer Workflow
+    subtitle: "Layout: three_col_text_image_text"
+    left:
+      heading: Write
+      body: "Define your slides in a YAML file. Each slide gets a layout name and content keys."
+    center: images/code-screen.jpg
+    right:
+      heading: Ship
+      body: "Run one command. Get a polished PPTX ready for PowerPoint, Keynote, or Google Slides."
+
+  # ── 10. three_col_image_text_text ─────────────────────────
+  - layout: three_col_image_text_text
+    title: From Vision to Reality
+    subtitle: "Layout: three_col_image_text_text"
+    left: images/architecture.jpg
+    center:
+      heading: Structure
+      body: "Like great architecture, great presentations need a solid structure beneath the surface."
+    right:
+      heading: Precision
+      body: "Every element is positioned by the layout engine. No more nudging shapes one pixel at a time."
+
+  # ── 11. three_col_text_text_image ─────────────────────────
+  - layout: three_col_text_text_image
+    title: See the Big Picture
+    subtitle: "Layout: three_col_text_text_image"
+    left:
+      heading: Insight
+      body: "Raw data becomes clear when it has the right visual context."
+    center:
+      heading: Context
+      body: "Pair your analysis with imagery that reinforces the message."
+    right: images/dashboard.jpg
+
+  # ── 12. SECTION ───────────────────────────────────────────
+  - layout: section
+    number: "03"
+    title: Three-Column Wide Layouts
+    subtitle: "Four permutations of 1/3 + 2/3 splits"
+
+  # ── 13. three_col_image_dtext ─────────────────────────────
+  - layout: three_col_image_dtext
+    title: Focus on What Matters
+    subtitle: "Layout: three_col_image_dtext — narrow image left, wide text right"
+    narrow: images/abstract-blue.jpg
+    wide:
+      heading: The Theme System
+      body: "Themes define named colors, fonts, and spacing tokens. Every layout resolves colors by name — so changing your primary accent from blue to green is a one-line YAML edit that propagates to every slide in the deck. Fonts, margins, and gutter widths work the same way. Define once, apply everywhere."
+
+  # ── 14. three_col_text_dimage ─────────────────────────────
+  - layout: three_col_text_dimage
+    title: Let the Image Speak
+    subtitle: "Layout: three_col_text_dimage — narrow text left, wide image right"
+    narrow:
+      heading: Scaling Up
+      body: "From a single city block to a global skyline — SlideCraft scales the same way. One YAML file, any number of slides."
+    wide:
+      image: images/tokyo-sunset.jpg
+      caption: "Tokyo skyline at sunset — Photo by Kuma Jio on Pexels"
+
+  # ── 15. three_col_dimage_text ─────────────────────────────
+  - layout: three_col_dimage_text
+    title: Wide Image, Side Notes
+    subtitle: "Layout: three_col_dimage_text — wide image left, narrow text right"
+    wide: images/mountains.jpg
+    narrow:
+      heading: Perspective
+      bullets:
+        - Step back
+        - See the full picture
+        - Then zoom in on details
+
+  # ── 16. three_col_dtext_image ─────────────────────────────
+  - layout: three_col_dtext_image
+    title: Deep Dive with Visual
+    subtitle: "Layout: three_col_dtext_image — wide text left, narrow image right"
+    wide:
+      heading: How SlideCraft Works
+      body: "Four layers: YAML content at the top, a layout registry that maps names to rendering classes, a primitives layer for low-level PPTX operations (text boxes, shapes, tables, images), and a theme system that resolves every color, font, and spacing value by name. The build command reads your YAML, instantiates layouts, and writes a .pptx file."
+    narrow: images/code-screen.jpg
+
+  # ── 17. SECTION ───────────────────────────────────────────
+  - layout: section
+    number: "04"
+    title: Data & Display Layouts
+    subtitle: Content, tables, metrics, quotes, profiles, and closing
+
+  # ── 18. content ───────────────────────────────────────────
+  - layout: content
+    title: The Workhorse Slide
+    subtitle: "Layout: content — bullets, numbered lists, or plain text"
+    body:
+      - The content layout handles the most common slide type
+      - Body can be a string, a bullet list, or a numbered list
+      - Use it for agendas, key points, summaries, or any text-heavy slide
+      - Pairs well with section breaks to structure your narrative
+
+  # ── 19. comparison ────────────────────────────────────────
   - layout: comparison
-    title: How We Compare
-    headers: ["Feature", "SlideCraft", "Manual PPTX", "Google Slides"]
+    title: Feature Matrix
+    subtitle: "Layout: comparison — side-by-side table with optional column highlight"
+    headers: ["Capability", "SlideCraft", "Manual PPTX", "Google Slides"]
     rows:
-      - ["YAML content", "Yes", "No", "No"]
-      - ["Themed layouts", "Yes", "No", "Limited"]
-      - ["Version control", "Yes", "No", "No"]
+      - ["YAML-driven content", "Yes", "No", "No"]
+      - ["21 layout types", "Yes", "No", "Limited"]
+      - ["Version controlled", "Yes", "No", "No"]
       - ["Batch generation", "Yes", "No", "No"]
+      - ["Theme system", "Yes", "No", "Basic"]
       - ["No browser needed", "Yes", "Yes", "No"]
     highlight_column: 1
 
-  # 8. Data table
+  # ── 20. data_table ────────────────────────────────────────
   - layout: data_table
     title: Layout Reference
+    subtitle: "Layout: data_table — with sidebar and footer"
     table:
-      - ["Layout", "Use Case", "Content Keys"]
-      - ["title", "Opening slide", "title, tagline, subtitle"]
-      - ["section", "Section divider", "number, title, subtitle"]
-      - ["content", "Body text/bullets", "title, body, variant"]
-      - ["two_col_*", "2-column (4 types)", "title, left, right"]
-      - ["three_col_*_*_*", "3-col equal (4 types)", "title, left, center, right"]
-      - ["three_col_*d*", "3-col wide (4 types)", "title, narrow, wide"]
-      - ["comparison", "Feature matrix", "title, headers, rows"]
-      - ["data_table", "Data display", "title, table, sidebar"]
-      - ["quote", "Testimonial", "quote, attribution"]
-      - ["profile", "Team bios", "title, profiles"]
-      - ["metrics", "KPI display", "title, metrics"]
-      - ["closing", "CTA/closing", "title, headline, contact"]
-    footer: "All layouts accept an optional subtitle field."
+      - ["Category", "Count", "Content Keys"]
+      - ["Base", "3", "title, body, variant"]
+      - ["Two-column", "4", "left, right"]
+      - ["Three-col equal", "4", "left, center, right"]
+      - ["Three-col wide", "4", "narrow, wide"]
+      - ["Data displays", "2", "headers, rows / table"]
+      - ["Other displays", "3", "quote / profiles / metrics"]
+      - ["Closing", "1", "headline, contact"]
+    highlight_row: 7
+    sidebar:
+      title: Totals
+      items:
+        - "21 layouts"
+        - "58 tests passing"
+        - "~900 lines of Python"
+    footer: "Every layout also accepts optional title and subtitle fields."
 
-  # 9. Metrics
+  # ── 21. metrics ───────────────────────────────────────────
   - layout: metrics
     title: By the Numbers
-    subtitle: SlideCraft at a glance
+    subtitle: "Layout: metrics — up to 4 hero numbers"
     metrics:
       - value: "21"
         label: Layouts
         context: every common slide type
-      - value: "~900"
-        label: Lines of Code
-        context: pure Python
-      - value: "0"
-        label: JS Dependencies
-        context: no browser required
+      - value: "58"
+        label: Tests
+        context: all passing
+      - value: "<1s"
+        label: Build Time
+        context: full 24-slide deck
 
-  # 10. Quote
+  # ── 22. quote ─────────────────────────────────────────────
   - layout: quote
-    title: Testimonial
-    quote: "I used to spend hours fiddling with slide positions. Now I just edit YAML and rebuild in seconds."
-    attribution: A Happy User
-    role: Presentation Builder
+    title: What People Say
+    quote: "I used to spend an entire afternoon on a 10-slide investor deck. Now I write the YAML in 20 minutes and rebuild whenever the numbers change."
+    attribution: A Relieved Founder
+    role: Seed-stage startup
 
-  # 11. Profile
+  # ── 23. profile ───────────────────────────────────────────
   - layout: profile
-    title: Built By
+    title: Who Built This
+    subtitle: "Layout: profile — 1 to 4 team members"
     profiles:
-      - name: SlideCraft Team
-        role: Open Source
-        company: "github.com/slidecraft"
-        bio: "SlideCraft was born from the frustration of manually building investor pitch decks. We believe content and layout should be separate concerns."
+      - name: SlideCraft
+        role: Open Source Library
+        company: github.com/jvsteiner/slidecraft
+        bio: "Born from the frustration of building investor pitch decks by hand. We believe content and layout should be separate concerns — so you can focus on your story, not your text boxes."
 
-  # 12. Closing
+  # ── 24. closing ───────────────────────────────────────────
   - layout: closing
     title: Try SlideCraft
     headline: Build better decks, faster.
     bullets:
       - pip install slidecraft
-      - Write YAML, run build, open PPTX
+      - Write YAML, run one command, open PPTX
       - Customize themes and layouts to match your brand
     contact:
-      url: "github.com/slidecraft"
+      url: github.com/jvsteiner/slidecraft
     closing: "Made with Python and good intentions."
