@@ -1,0 +1,92 @@
+# Canopy — Earth tones, natural. Think sustainability report, wellness, organic brand.
+# Fonts: Libre Baskerville (display) + Source Sans 3 (body) — bookish serif meets friendly sans.
+# Palette: Warm off-white ground, forest green accent, earth browns.
+
+theme:
+  font_display: "Libre Baskerville"
+  font_body: "Source Sans 3"
+  colors:
+    bg: "#FAFAF5"
+    surface: "#F0EFE7"
+    primary: "#166534"
+    primary_dark: "#14532D"
+    text: "#1A1A1A"
+    text_secondary: "#374151"
+    text_muted: "#6B7280"
+    text_dim: "#9CA3AF"
+    divider: "#D1D5DB"
+    row_alt: "#F5F5EB"
+    border: "#C6C6B8"
+    danger: "#DC2626"
+    success: "#059669"
+    warning: "#D97706"
+
+slides:
+
+  - layout: title
+    title: "Watershed"
+    tagline: "Measure what matters."
+    subtitle: "Annual Impact Report 2024"
+    footer: "watershed.earth  |  B Corp Certified"
+
+  - layout: metrics
+    title: 2024 Highlights
+    metrics:
+      - value: "12,400"
+        label: "Tonnes CO2e Avoided"
+        context: "across all clients"
+      - value: "340"
+        label: "Companies Reporting"
+        context: "up from 210 in 2023"
+      - value: "98.2%"
+        label: "Data Accuracy"
+        context: "third-party verified"
+      - value: "4"
+        label: "New Frameworks"
+        context: "CSRD, TNFD, SBTi, ISSB"
+
+  - layout: data_table
+    title: Emissions by Scope
+    subtitle: "Aggregate portfolio data, 2024 reporting year."
+    table:
+      - ["Scope", "Tonnes CO2e", "% of Total", "YoY Change"]
+      - ["Scope 1 (Direct)", "1,240", "10%", "-12%"]
+      - ["Scope 2 (Energy)", "2,680", "22%", "-8%"]
+      - ["Scope 3 (Value Chain)", "8,480", "68%", "-3%"]
+      - ["Total", "12,400", "100%", "-5.4%"]
+    highlight_row: 4
+    sidebar:
+      title: "Methodology"
+      items:
+        - "GHG Protocol Corporate Standard"
+        - "Activity-based for Scope 1 & 2"
+        - "Hybrid model for Scope 3"
+        - "All data third-party assured"
+
+  - layout: two_col_text_text
+    title: What We Learned
+    variant: "50_50"
+    left:
+      heading: "Working"
+      bullets:
+        - "Automated data collection reduced reporting time by 60%"
+        - "Supplier engagement program reached 78% response rate"
+        - "Science-based targets adopted by 82% of portfolio"
+    right:
+      heading: "Needs Attention"
+      bullets:
+        - "Scope 3 Category 11 (use of sold products) still estimated"
+        - "Biodiversity metrics not yet integrated"
+        - "SME clients need simplified onboarding"
+
+  - layout: closing
+    title: "The Path Forward"
+    headline: "From measurement to transformation."
+    bullets:
+      - "Launch nature-positive module (TNFD aligned)"
+      - "Expand to 500 reporting companies by 2025"
+      - "Open-source our emissions factor database"
+    contact:
+      url: watershed.earth
+      email: impact@watershed.earth
+    closing: "The climate crisis is a data problem. We're solving it."

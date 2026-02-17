@@ -13,7 +13,7 @@
       "name": "slide-builder",
       "source": "./plugins/slide-builder",
       "description": "Claude Code skill for building PowerPoint presentations from YAML using SlideCraft",
-      "version": "0.1.0"
+      "version": "0.2.0"
     }
   ]
 }

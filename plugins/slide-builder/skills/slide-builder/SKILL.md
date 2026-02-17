@@ -357,9 +357,152 @@ Closing slide with CTA.
   closing: "Made with care."        # optional
 ```
 
+## Pre-built Templates (6)
+
+SlideCraft ships with 6 templates. Each is a complete theme block you can drop into any content YAML. When the user asks for a deck without specifying a style, choose the template that best fits the content. Suggest the template by name so the user can swap it.
+
+### Boardroom
+Clean corporate. Think McKinsey, Bain, board meetings. White ground, navy accent.
+```yaml
+theme:
+  font_display: "Inter"
+  font_body: "Inter"
+  colors:
+    bg: "#FFFFFF"
+    surface: "#F8FAFC"
+    primary: "#1E3A5F"
+    primary_dark: "#152D4A"
+    text: "#0F172A"
+    text_secondary: "#334155"
+    text_muted: "#64748B"
+    text_dim: "#94A3B8"
+    divider: "#E2E8F0"
+    row_alt: "#F8FAFC"
+    border: "#CBD5E1"
+    danger: "#DC2626"
+    success: "#059669"
+    warning: "#D97706"
+```
+
+### Midnight
+Dark, technical. Think Vercel, Linear, developer tools. Dark slate ground, sky-blue accent.
+```yaml
+theme:
+  font_display: "Space Grotesk"
+  font_body: "Inter"
+  colors:
+    bg: "#0F172A"
+    surface: "#1E293B"
+    primary: "#38BDF8"
+    primary_dark: "#0EA5E9"
+    text: "#F8FAFC"
+    text_secondary: "#CBD5E1"
+    text_muted: "#94A3B8"
+    text_dim: "#64748B"
+    divider: "#334155"
+    row_alt: "#1E293B"
+    border: "#475569"
+    danger: "#F87171"
+    success: "#34D399"
+    warning: "#FBBF24"
+```
+
+### Ember
+Warm, confident. Think editorial, boutique, brand strategy. Warm white ground, burnt orange accent.
+```yaml
+theme:
+  font_display: "DM Serif Display"
+  font_body: "DM Sans"
+  colors:
+    bg: "#FFFBF5"
+    surface: "#FFF7ED"
+    primary: "#C2410C"
+    primary_dark: "#9A3412"
+    text: "#1C1917"
+    text_secondary: "#44403C"
+    text_muted: "#78716C"
+    text_dim: "#A8A29E"
+    divider: "#E7E5E4"
+    row_alt: "#FAFAF9"
+    border: "#D6D3D1"
+    danger: "#DC2626"
+    success: "#059669"
+    warning: "#EA580C"
+```
+
+### Ink
+Minimal, editorial. Think Apple keynote, Dieter Rams. Pure white, near-black text, red as the only accent.
+```yaml
+theme:
+  font_display: "Cormorant Garamond"
+  font_body: "Lato"
+  colors:
+    bg: "#FFFFFF"
+    surface: "#FAFAFA"
+    primary: "#DC2626"
+    primary_dark: "#B91C1C"
+    text: "#18181B"
+    text_secondary: "#3F3F46"
+    text_muted: "#71717A"
+    text_dim: "#A1A1AA"
+    divider: "#E4E4E7"
+    row_alt: "#FAFAFA"
+    border: "#D4D4D8"
+    danger: "#DC2626"
+    success: "#059669"
+    warning: "#EA580C"
+```
+
+### Canopy
+Earth tones, natural. Think sustainability, wellness, organic brands. Warm off-white, forest green accent.
+```yaml
+theme:
+  font_display: "Libre Baskerville"
+  font_body: "Source Sans 3"
+  colors:
+    bg: "#FAFAF5"
+    surface: "#F0EFE7"
+    primary: "#166534"
+    primary_dark: "#14532D"
+    text: "#1A1A1A"
+    text_secondary: "#374151"
+    text_muted: "#6B7280"
+    text_dim: "#9CA3AF"
+    divider: "#D1D5DB"
+    row_alt: "#F5F5EB"
+    border: "#C6C6B8"
+    danger: "#DC2626"
+    success: "#059669"
+    warning: "#D97706"
+```
+
+### Signal
+Bold, energetic. Think Product Hunt, YC Demo Day, consumer app. White ground, vivid purple accent.
+```yaml
+theme:
+  font_display: "Plus Jakarta Sans"
+  font_body: "Plus Jakarta Sans"
+  colors:
+    bg: "#FFFFFF"
+    surface: "#FAF5FF"
+    primary: "#7C3AED"
+    primary_dark: "#6D28D9"
+    text: "#0F172A"
+    text_secondary: "#334155"
+    text_muted: "#64748B"
+    text_dim: "#94A3B8"
+    divider: "#E2E8F0"
+    row_alt: "#FAF5FF"
+    border: "#CBD5E1"
+    danger: "#E11D48"
+    success: "#059669"
+    warning: "#EA580C"
+```
+
 ## Theme Tips
 
 - **Dark theme**: Set `bg` to a dark color, `text` to white, adjust surface/muted accordingly
-- **Brand colors**: Override `primary` and `primary_dark`
+- **Brand colors**: Override `primary` and `primary_dark` on any template
 - **Custom fonts**: Use any installed system font via `font_display` and `font_body`
 - All image paths are relative to the YAML file location
+- Templates use Google Fonts — install them for best results, or PowerPoint will substitute

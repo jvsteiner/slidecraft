@@ -1,0 +1,84 @@
+# Midnight — Dark, technical. Think Vercel, Linear, developer tools.
+# Fonts: Space Grotesk (display) + Inter (body) — geometric, modern, precise.
+# Palette: Dark slate ground, sky-blue accent, cool grays.
+
+theme:
+  font_display: "Space Grotesk"
+  font_body: "Inter"
+  colors:
+    bg: "#0F172A"
+    surface: "#1E293B"
+    primary: "#38BDF8"
+    primary_dark: "#0EA5E9"
+    text: "#F8FAFC"
+    text_secondary: "#CBD5E1"
+    text_muted: "#94A3B8"
+    text_dim: "#64748B"
+    divider: "#334155"
+    row_alt: "#1E293B"
+    border: "#475569"
+    danger: "#F87171"
+    success: "#34D399"
+    warning: "#FBBF24"
+
+slides:
+
+  - layout: title
+    title: "Voxel"
+    tagline: "Infrastructure that disappears."
+    subtitle: "Real-time edge compute for the rest of us."
+    footer: "voxel.dev  |  Seed Round 2025"
+
+  - layout: two_col_text_text
+    title: The Problem
+    variant: "50_50"
+    left:
+      heading: "What developers want"
+      bullets:
+        - "Sub-50ms response times globally"
+        - "Zero cold starts"
+        - "Deploy in seconds, not minutes"
+        - "Pay only for what runs"
+    right:
+      heading: "What they get today"
+      bullets:
+        - "Lambda cold starts: 200–800ms"
+        - "CloudFront functions: no state, 5ms CPU cap"
+        - "Fly.io: great DX, unpredictable billing"
+        - "Cloudflare Workers: V8 isolates only, no containers"
+
+  - layout: comparison
+    title: How Voxel Compares
+    headers: ["", "Voxel", "Lambda@Edge", "CF Workers", "Fly.io"]
+    rows:
+      - ["Cold start", "<5ms", "200-800ms", "0ms", "~300ms"]
+      - ["Runtime", "Any container", "Node/Python", "V8 only", "Any container"]
+      - ["Global regions", "42", "13", "300+", "35"]
+      - ["Persistent state", "Built-in KV + SQLite", "External only", "KV + D1", "Volumes"]
+      - ["Deploy time", "<3s", "~60s", "<5s", "~30s"]
+      - ["Pricing model", "Per-request", "Per-request + duration", "Per-request", "Per-VM"]
+    highlight_column: 1
+
+  - layout: three_col_text_text_text
+    title: How It Works
+    left:
+      heading: "1. Push"
+      body: "Push a container image or point us at your repo. We build an optimized microVM image in under 3 seconds."
+    center:
+      heading: "2. Warm"
+      body: "Voxel pre-warms instances in every region where your users live. Predictive scaling, not reactive."
+    right:
+      heading: "3. Serve"
+      body: "Requests route to the nearest warm instance. Built-in KV store and SQLite for state. No external dependencies."
+
+  - layout: closing
+    title: The Ask
+    headline: "Raising $4M seed to build the next compute primitive."
+    bullets:
+      - "Team: 3 ex-Cloudflare engineers, built Workers KV"
+      - "Prototype serving 2M req/day in private beta"
+      - "Design partners: 4 YC companies committed"
+    contact:
+      url: voxel.dev
+      email: founders@voxel.dev
+    closing: "The last infrastructure layer developers will ever configure."

@@ -1,0 +1,70 @@
+# Ink — Minimal, editorial. Think Apple keynote, Dieter Rams, The New Yorker.
+# Fonts: Cormorant Garamond (display) + Lato (body) — elegant serif headlines, clean sans body.
+# Palette: Pure white ground, near-black text, red as the only accent.
+
+theme:
+  font_display: "Cormorant Garamond"
+  font_body: "Lato"
+  colors:
+    bg: "#FFFFFF"
+    surface: "#FAFAFA"
+    primary: "#DC2626"
+    primary_dark: "#B91C1C"
+    text: "#18181B"
+    text_secondary: "#3F3F46"
+    text_muted: "#71717A"
+    text_dim: "#A1A1AA"
+    divider: "#E4E4E7"
+    row_alt: "#FAFAFA"
+    border: "#D4D4D8"
+    danger: "#DC2626"
+    success: "#059669"
+    warning: "#EA580C"
+
+slides:
+
+  - layout: title
+    title: "Less, but better."
+    subtitle: "A framework for product decisions."
+    footer: "Internal  |  Design Team Offsite 2025"
+
+  - layout: two_col_text_text
+    title: Two Kinds of Complexity
+    variant: "50_50"
+    left:
+      heading: "Essential"
+      body: "Complexity that exists because the problem is genuinely hard. A tax engine must handle 10,000 rules. A flight search must optimize across millions of combinations. You cannot remove this complexity — only manage it well."
+    right:
+      heading: "Accidental"
+      body: "Complexity that exists because of how we built the solution. A settings page with 47 toggles. A permissions model no one understands. Three ways to do the same thing. This complexity is our fault, and we can eliminate it."
+
+  - layout: content
+    title: The Razor
+    subtitle: "One question to cut through every product debate."
+    body:
+      - "Before adding anything — a feature, a setting, a toggle, a flow — ask:"
+      - "\"If we launched today with a blank slate, would we build this?\""
+      - "If the answer is no, you are preserving accidental complexity out of habit."
+      - "If the answer is yes, build it as simply as the problem allows."
+
+  - layout: metrics
+    title: The Cost of More
+    metrics:
+      - value: "47%"
+        label: "Features never used"
+        context: "Pendo benchmark, 2024"
+      - value: "3.2x"
+        label: "Support cost multiplier"
+        context: "per feature added"
+      - value: "11 min"
+        label: "Avg. onboarding time"
+        context: "was 4 min two years ago"
+
+  - layout: closing
+    title: "The Work Ahead"
+    headline: "Subtract before you add."
+    bullets:
+      - "Audit: identify the 20 features that serve 80% of users"
+      - "Sunset: deprecate everything else over two quarters"
+      - "Simplify: redesign core flows with zero-state thinking"
+    closing: "Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away."

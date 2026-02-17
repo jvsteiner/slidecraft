@@ -1,6 +1,6 @@
 [project]
 name = "slidecraft"
-version = "0.1.0"
+version = "0.2.0"
 description = "Build PowerPoint decks from YAML content with themed layouts"
 requires-python = ">=3.10"
 dependencies = [

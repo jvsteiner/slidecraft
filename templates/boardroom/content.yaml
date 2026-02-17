@@ -1,0 +1,90 @@
+# Boardroom — Clean corporate. Think McKinsey, Bain, board meetings.
+# Fonts: Inter (display + body) — neutral, authoritative, ultra-readable.
+# Palette: White ground, navy accent, slate grays.
+
+theme:
+  font_display: "Inter"
+  font_body: "Inter"
+  colors:
+    bg: "#FFFFFF"
+    surface: "#F8FAFC"
+    primary: "#1E3A5F"
+    primary_dark: "#152D4A"
+    text: "#0F172A"
+    text_secondary: "#334155"
+    text_muted: "#64748B"
+    text_dim: "#94A3B8"
+    divider: "#E2E8F0"
+    row_alt: "#F8FAFC"
+    border: "#CBD5E1"
+    danger: "#DC2626"
+    success: "#059669"
+    warning: "#D97706"
+
+slides:
+
+  - layout: title
+    title: "Q4 2025 Business Review"
+    tagline: "Accelerating through headwinds."
+    subtitle: "Prepared for the Board of Directors"
+    footer: "Confidential  |  Acme Corporation"
+
+  - layout: metrics
+    title: Key Performance Indicators
+    metrics:
+      - value: "$24.3M"
+        label: "Quarterly Revenue"
+        context: "+18% YoY"
+      - value: "92%"
+        label: "Gross Margin"
+        context: "up from 88%"
+      - value: "1,240"
+        label: "Enterprise Clients"
+        context: "+60 net new"
+      - value: "118%"
+        label: "Net Revenue Retention"
+        context: "best quarter ever"
+
+  - layout: two_col_text_text
+    title: Strategic Priorities
+    subtitle: "Focus areas for the next two quarters."
+    variant: "50_50"
+    left:
+      heading: "Product"
+      bullets:
+        - "Enterprise SSO rollout (March)"
+        - "API v3 general availability"
+        - "SOC 2 Type II certification"
+        - "Mobile app beta launch"
+    right:
+      heading: "Go-to-Market"
+      bullets:
+        - "Expand EMEA field sales (3 AEs)"
+        - "Launch partner certification program"
+        - "Increase PLG conversion to 8%"
+        - "Annual contract push ($50K+ ACV)"
+
+  - layout: data_table
+    title: Financial Summary
+    table:
+      - ["", "Q4 Actual", "Q4 Plan", "Variance"]
+      - ["Revenue", "$24.3M", "$22.0M", "+10.5%"]
+      - ["Gross Profit", "$22.4M", "$19.4M", "+15.5%"]
+      - ["OpEx", "$18.1M", "$19.0M", "-4.7%"]
+      - ["EBITDA", "$4.3M", "$0.4M", "+975%"]
+    highlight_row: 4
+    sidebar:
+      title: "Commentary"
+      items:
+        - "Revenue beat driven by 3 large enterprise deals closed in December"
+        - "OpEx under plan due to delayed EMEA hiring"
+        - "Cash position: $31.2M (18 months runway)"
+
+  - layout: closing
+    title: "Next Steps"
+    headline: "Positioned for a breakout year."
+    bullets:
+      - "Board vote: approve Series C term sheet ($40M at $320M)"
+      - "Hire VP Engineering and VP Sales EMEA by March"
+      - "Target $110M ARR exit rate by Q4 2026"
+    closing: "Questions and discussion."

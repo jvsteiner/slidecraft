@@ -1,0 +1,67 @@
+# Ember — Warm, confident. Think editorial, boutique, brand strategy.
+# Fonts: DM Serif Display (display) + DM Sans (body) — warm serif meets clean sans.
+# Palette: Warm white ground, burnt orange accent, stone neutrals.
+
+theme:
+  font_display: "DM Serif Display"
+  font_body: "DM Sans"
+  colors:
+    bg: "#FFFBF5"
+    surface: "#FFF7ED"
+    primary: "#C2410C"
+    primary_dark: "#9A3412"
+    text: "#1C1917"
+    text_secondary: "#44403C"
+    text_muted: "#78716C"
+    text_dim: "#A8A29E"
+    divider: "#E7E5E4"
+    row_alt: "#FAFAF9"
+    border: "#D6D3D1"
+    danger: "#DC2626"
+    success: "#059669"
+    warning: "#EA580C"
+
+slides:
+
+  - layout: title
+    title: "Kindling & Co."
+    tagline: "Stories that start movements."
+    subtitle: "Brand Strategy  |  Content  |  Creative Direction"
+    footer: "kindlingco.studio  |  Brooklyn, NY"
+
+  - layout: content
+    title: What We Believe
+    body:
+      - "Every brand has a story. Most tell it badly."
+      - "We don't make ads. We build narrative architectures — systems of meaning that compound over time."
+      - "The best brands don't compete for attention. They earn devotion."
+      - "Strategy without craft is a memo. Craft without strategy is decoration."
+
+  - layout: three_col_text_text_text
+    title: How We Work
+    left:
+      heading: "Uncover"
+      body: "Two weeks of deep immersion. We interview your team, your customers, and your competitors' customers. We find the tension your brand resolves."
+    center:
+      heading: "Architect"
+      body: "We build your narrative architecture: positioning, voice, visual language, and a content framework. Not a 90-page PDF — a living system."
+    right:
+      heading: "Ignite"
+      body: "We produce the first wave of creative — the website, the launch campaign, the founding story. Then we hand you the playbook to keep the fire going."
+
+  - layout: quote
+    quote: "Kindling didn't give us a brand guide. They gave us a way of seeing ourselves that we'd never had before. Everything we've built since flows from that."
+    attribution: "Maren Ishida"
+    role: "CEO, Heirloom Robotics"
+
+  - layout: closing
+    title: "Let's Talk"
+    headline: "The right story changes everything."
+    bullets:
+      - "Typical engagement: 8–12 weeks"
+      - "Starts at $75K for full brand architecture"
+      - "Currently booking Q3 2025"
+    contact:
+      email: "hello@kindlingco.studio"
+      url: "kindlingco.studio"
+    closing: "We only take four clients at a time."

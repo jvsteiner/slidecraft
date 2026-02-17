@@ -1,0 +1,90 @@
+# Signal — Bold, energetic. Think Product Hunt launch, YC Demo Day, consumer app.
+# Fonts: Plus Jakarta Sans (display + body) — geometric, friendly, high-energy.
+# Palette: White ground, vivid purple accent, lavender surface tones.
+
+theme:
+  font_display: "Plus Jakarta Sans"
+  font_body: "Plus Jakarta Sans"
+  colors:
+    bg: "#FFFFFF"
+    surface: "#FAF5FF"
+    primary: "#7C3AED"
+    primary_dark: "#6D28D9"
+    text: "#0F172A"
+    text_secondary: "#334155"
+    text_muted: "#64748B"
+    text_dim: "#94A3B8"
+    divider: "#E2E8F0"
+    row_alt: "#FAF5FF"
+    border: "#CBD5E1"
+    danger: "#E11D48"
+    success: "#059669"
+    warning: "#EA580C"
+
+slides:
+
+  - layout: title
+    title: "Ping"
+    tagline: "Never miss the moment."
+    subtitle: "Smart notifications that actually respect your attention."
+    footer: "getping.app  |  YC W25"
+
+  - layout: two_col_text_text
+    title: The Attention Problem
+    variant: "50_50"
+    left:
+      heading: "By the Numbers"
+      bullets:
+        - heading: "352 notifications per day"
+          detail: "for the average knowledge worker"
+        - heading: "23 minutes"
+          detail: "to regain deep focus after an interruption"
+        - heading: "28% of the workday"
+          detail: "spent recovering from unnecessary context switches"
+    right:
+      heading: "Why It's Broken"
+      bullets:
+        - heading: "Apps compete for your attention"
+          detail: "Every app thinks its notification is urgent"
+        - heading: "Do Not Disturb is a sledgehammer"
+          detail: "You miss the 2 important things to block 350 unimportant ones"
+        - heading: "No one's solving this at the OS level"
+          detail: "Apple Focus modes require manual curation of hundreds of apps"
+
+  - layout: three_col_text_text_text
+    title: How Ping Works
+    left:
+      heading: "Learn"
+      body: "Ping watches which notifications you act on, dismiss, or ignore. After 48 hours it understands your priorities better than you do."
+    center:
+      heading: "Filter"
+      body: "Unimportant notifications are silently batched. Important ones get through instantly. No configuration — it just learns."
+    right:
+      heading: "Digest"
+      body: "Three times a day you get a calm summary of everything Ping held back. Swipe to train it further. It gets smarter every day."
+
+  - layout: metrics
+    title: Early Results
+    subtitle: "From 2,400 beta users over 90 days."
+    metrics:
+      - value: "74%"
+        label: "Fewer Interruptions"
+        context: "avg. reduction in live notifications"
+      - value: "2.1h"
+        label: "Deep Focus Gained"
+        context: "extra focused time per day"
+      - value: "4.8"
+        label: "App Store Rating"
+        context: "from 1,200 reviews"
+
+  - layout: closing
+    title: The Ask
+    headline: "Raising $3M to own the notification layer."
+    bullets:
+      - "Launch on iOS and Android in Q2 2025"
+      - "B2B version for Slack/Teams in Q3"
+      - "$8/mo consumer, $6/seat/mo enterprise"
+    contact:
+      url: getping.app
+      email: hello@getping.app
+    closing: "Your attention is the last scarce resource. We're going to protect it."
