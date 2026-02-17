@@ -18,11 +18,11 @@ theme:
     warning: "#EA580C"
 
 slides:
-  # 1. Title slide
+  # 1. Title
   - layout: title
     title: SlideCraft
     tagline: Build decks from YAML.
-    subtitle: A demo of all 12 layouts
+    subtitle: A demo of all 21 layouts
     footer: "Built with SlideCraft v0.1"
 
   # 2. Section break
@@ -31,17 +31,17 @@ slides:
     title: Text Layouts
     subtitle: Content, columns, and bullets
 
-  # 3. Content slide — bullets
+  # 3. Content — bullets
   - layout: content
     title: Why SlideCraft?
     subtitle: Simple, powerful, repeatable
     body:
       - YAML-driven content — edit text without touching code
-      - 12 canonical layouts covering 95% of presentation needs
+      - 21 layout types covering every common slide need
       - Theme system with named colors, fonts, and spacing
       - Pure Python — no browser, no React, no Puppeteer
 
-  # 4. Content slide — numbered
+  # 4. Content — numbered
   - layout: content
     title: Getting Started
     variant: numbered
@@ -51,8 +51,8 @@ slides:
       - Run python3 -m slidecraft build content.yaml output.pptx
       - Open output.pptx in PowerPoint or Keynote
 
-  # 5. Two-column layout
-  - layout: two_column
+  # 5. Two-column text | text
+  - layout: two_col_text_text
     title: Before & After
     subtitle: Content-code separation
     variant: "50_50"
@@ -67,21 +67,20 @@ slides:
       bullets:
         - Content lives in YAML
         - Edit text without touching code
-        - 12 reusable layouts
+        - 21 reusable layouts
 
-  # 6. Three-column layout
-  - layout: three_column
+  # 6. Three-column text | text | text
+  - layout: three_col_text_text_text
     title: Core Concepts
-    columns:
-      - icon: "📄"
-        heading: Content
-        body: YAML files define what goes on each slide — text, data, images.
-      - icon: "🎨"
-        heading: Theme
-        body: Named colors, fonts, and spacing tokens ensure visual consistency.
-      - icon: "📐"
-        heading: Layouts
-        body: 12 layout types handle positioning, so you focus on content.
+    left:
+      heading: Content
+      body: YAML files define what goes on each slide — text, data, images.
+    center:
+      heading: Theme
+      body: Named colors, fonts, and spacing tokens ensure visual consistency.
+    right:
+      heading: Layouts
+      body: 21 layout types handle positioning, so you focus on content.
 
   # 7. Comparison table
   - layout: comparison
@@ -97,18 +96,18 @@ slides:
 
   # 8. Data table
   - layout: data_table
-    title: Layout Coverage
+    title: Layout Reference
     table:
-      - ["Layout", "Use Case", "Content Zones"]
-      - ["title", "Opening slide", "title, tagline, subtitle, footer"]
+      - ["Layout", "Use Case", "Content Keys"]
+      - ["title", "Opening slide", "title, tagline, subtitle"]
       - ["section", "Section divider", "number, title, subtitle"]
       - ["content", "Body text/bullets", "title, body, variant"]
-      - ["two_column", "Side-by-side", "title, left, right, variant"]
-      - ["three_column", "Feature cards", "title, columns"]
-      - ["image_text", "Image + text", "title, image, text"]
+      - ["two_col_*", "2-column (4 types)", "title, left, right"]
+      - ["three_col_*_*_*", "3-col equal (4 types)", "title, left, center, right"]
+      - ["three_col_*d*", "3-col wide (4 types)", "title, narrow, wide"]
       - ["comparison", "Feature matrix", "title, headers, rows"]
       - ["data_table", "Data display", "title, table, sidebar"]
-      - ["quote", "Testimonial", "quote, attribution, role"]
+      - ["quote", "Testimonial", "quote, attribution"]
       - ["profile", "Team bios", "title, profiles"]
       - ["metrics", "KPI display", "title, metrics"]
       - ["closing", "CTA/closing", "title, headline, contact"]
@@ -119,14 +118,14 @@ slides:
     title: By the Numbers
     subtitle: SlideCraft at a glance
     metrics:
-      - value: "12"
+      - value: "21"
         label: Layouts
-        context: covering 95% of needs
-      - value: "~800"
+        context: every common slide type
+      - value: "~900"
         label: Lines of Code
         context: pure Python
       - value: "0"
-        label: Dependencies on JS
+        label: JS Dependencies
         context: no browser required
 
   # 10. Quote
@@ -136,7 +135,7 @@ slides:
     attribution: A Happy User
     role: Presentation Builder
 
-  # 11. Profile — single
+  # 11. Profile
   - layout: profile
     title: Built By
     profiles:

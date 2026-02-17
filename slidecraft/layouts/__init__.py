@@ -5,9 +5,18 @@ from .base import BaseLayout
 from .title import TitleLayout
 from .section import SectionLayout
 from .content import ContentLayout
-from .two_column import TwoColumnLayout
-from .three_column import ThreeColumnLayout
-from .image_text import ImageTextLayout
+from .two_col import (
+    TwoColTextText, TwoColTextImage,
+    TwoColImageText, TwoColImageImage,
+)
+from .three_col_equal import (
+    ThreeColTextTextText, ThreeColTextImageText,
+    ThreeColImageTextText, ThreeColTextTextImage,
+)
+from .three_col_wide import (
+    ThreeColImageDtext, ThreeColTextDimage,
+    ThreeColDimageText, ThreeColDtextImage,
+)
 from .comparison import ComparisonLayout
 from .data_table import DataTableLayout
 from .quote import QuoteLayout
@@ -22,14 +31,26 @@ def _register(cls: type[BaseLayout]):
     _REGISTRY[cls.name] = cls
 
 
-# Register all built-in layouts
 for _cls in [
     TitleLayout,
     SectionLayout,
     ContentLayout,
-    TwoColumnLayout,
-    ThreeColumnLayout,
-    ImageTextLayout,
+    # Two-column (4)
+    TwoColTextText,
+    TwoColTextImage,
+    TwoColImageText,
+    TwoColImageImage,
+    # Three-column equal (4)
+    ThreeColTextTextText,
+    ThreeColTextImageText,
+    ThreeColImageTextText,
+    ThreeColTextTextImage,
+    # Three-column wide (4)
+    ThreeColImageDtext,
+    ThreeColTextDimage,
+    ThreeColDimageText,
+    ThreeColDtextImage,
+    # Other
     ComparisonLayout,
     DataTableLayout,
     QuoteLayout,
