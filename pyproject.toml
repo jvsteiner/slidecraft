@@ -16,6 +16,9 @@ dev = [
 [project.scripts]
 slidecraft = "slidecraft.__main__:main"
 
+[tool.setuptools.packages.find]
+include = ["slidecraft*"]
+
 [build-system]
 requires = ["setuptools>=68.0"]
 build-backend = "setuptools.build_meta"
