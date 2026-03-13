@@ -28,6 +28,7 @@ class DeckBuilder:
         self._blank_layout = self.prs.slide_layouts[6]
         self._content = None
         self._base_dir = '.'
+        self._current_slide_data = None
 
     @classmethod
     def from_yaml(cls, path: str) -> 'DeckBuilder':
@@ -61,11 +62,31 @@ class DeckBuilder:
         return os.path.join(self._base_dir, relative_path)
 
     def new_slide(self, bg: str = 'bg'):
-        """Add a blank slide with themed background."""
+        """Add a blank slide with themed background or background image."""
         slide = self.prs.slides.add_slide(self._blank_layout)
-        fill = slide.background.fill
-        fill.solid()
-        fill.fore_color.rgb = self.theme.color(bg)
+
+        # Resolve background image: per-slide overrides global theme
+        data = self._current_slide_data or {}
+        bg_image = data.get('background_image', self.theme.background_image)
+
+        if bg_image is not None:
+            resolved = self.resolve_path(bg_image)
+            if not os.path.isfile(resolved):
+                raise FileNotFoundError(
+                    f"Background image not found: {resolved}")
+            self.p.background_image(slide, resolved)
+            # Apply overlay if configured (per-slide overrides global)
+            overlay_cfg = data.get('overlay', self.theme.overlay)
+            if overlay_cfg:
+                self.p.overlay(
+                    slide,
+                    color=overlay_cfg.get('color', '#000000'),
+                    opacity=overlay_cfg.get('opacity', 0.5))
+        else:
+            fill = slide.background.fill
+            fill.solid()
+            fill.fore_color.rgb = self.theme.color(bg)
+
         return slide
 
     def build(self):
@@ -88,7 +109,9 @@ class DeckBuilder:
 
             layout_cls = get_layout(layout_name)
             slide_num += 1
+            self._current_slide_data = data
             layout_cls().render(self, data, slide_num)
+            self._current_slide_data = None
 
     def save(self, path: str):
         """Save the presentation to a file."""

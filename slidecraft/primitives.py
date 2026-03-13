@@ -4,10 +4,13 @@ Primitives — low-level PPTX building blocks.
 All position/size parameters are in inches (float).
 Color parameters accept theme color names (str) or RGBColor objects.
 """
+from lxml import etree
 from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.enum.shapes import MSO_SHAPE
+
+_DRAWINGML_NS = 'http://schemas.openxmlformats.org/drawingml/2006/main'
 
 from .theme import Theme
 
@@ -141,6 +144,40 @@ class Primitives:
                                    size=bullet_size - 2,
                                    color=detail_color, space_before=2)
         return tf
+
+    # ------------------------------------------------------------------
+    # Backgrounds
+    # ------------------------------------------------------------------
+
+    def background_image(self, slide, image_path):
+        """Add a full-slide background image, sent to back of z-order."""
+        pic = slide.shapes.add_picture(
+            image_path, Inches(0), Inches(0), Inches(13.333), Inches(7.5))
+        sp_tree = slide.shapes._spTree
+        sp_tree.remove(pic._element)
+        sp_tree.insert(2, pic._element)
+
+    def overlay(self, slide, color='#000000', opacity=0.5):
+        """Draw a semi-transparent rectangle over the full slide."""
+        shape = slide.shapes.add_shape(
+            MSO_SHAPE.RECTANGLE,
+            Inches(0), Inches(0), Inches(13.333), Inches(7.5))
+        shape.fill.solid()
+        shape.fill.fore_color.rgb = self._resolve_color(color)
+        shape.line.fill.background()
+        # Set fill transparency via lxml — python-pptx doesn't expose this.
+        # Navigate: shape._element -> spPr -> solidFill -> srgbClr
+        srgb_elem = shape._element.find(
+            f'.//{{{_DRAWINGML_NS}}}solidFill/{{{_DRAWINGML_NS}}}srgbClr')
+        if srgb_elem is not None:
+            alpha_val = int(opacity * 100000)
+            alpha_elem = etree.SubElement(
+                srgb_elem, f'{{{_DRAWINGML_NS}}}alpha')
+            alpha_elem.set('val', str(alpha_val))
+        # Position behind content but in front of background image
+        sp_tree = slide.shapes._spTree
+        sp_tree.remove(shape._element)
+        sp_tree.insert(3, shape._element)
 
     # ------------------------------------------------------------------
     # Shapes

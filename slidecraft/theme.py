@@ -50,6 +50,8 @@ class Theme:
     def __init__(self, config: dict):
         self.font_display = config.get('font_display', 'Helvetica Neue')
         self.font_body = config.get('font_body', 'Helvetica Neue')
+        self.background_image = config.get('background_image')
+        self.overlay = config.get('overlay')
 
         self._colors = {}
         merged = {**DEFAULT_COLORS, **config.get('colors', {})}
