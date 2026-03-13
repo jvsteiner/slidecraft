@@ -58,11 +58,16 @@ class Primitives:
         tf.word_wrap = True
         p = tf.paragraphs[0]
         p.text = str(text)
+        resolved_font = self._resolve_font(font, heading)
         p.font.size = Pt(size)
         p.font.color.rgb = self._resolve_color(color)
         p.font.bold = bold
-        p.font.name = self._resolve_font(font, heading)
+        p.font.name = resolved_font
         p.alignment = self._resolve_align(align)
+        # Stamp font on the run — p.font.name only sets defRPr, which
+        # PowerPoint drops when the font isn't installed on the viewer's machine.
+        if p.runs:
+            p.runs[0].font.name = resolved_font
         p.space_after = Pt(0)
         if line_spacing != 1.0:
             p.line_spacing = Pt(size * line_spacing)
@@ -74,13 +79,17 @@ class Primitives:
         """Add a paragraph to a text frame. Returns the paragraph."""
         p = tf.add_paragraph()
         p.text = str(text)
+        resolved_font = self._resolve_font(font, heading)
         p.font.size = Pt(size)
         p.font.color.rgb = self._resolve_color(color)
         p.font.bold = bold
-        p.font.name = self._resolve_font(font, heading)
+        p.font.name = resolved_font
         p.alignment = self._resolve_align(align)
         p.space_before = Pt(space_before)
         p.space_after = Pt(space_after)
+        # Stamp font on the run — see text_box() comment.
+        if p.runs:
+            p.runs[0].font.name = resolved_font
         return p
 
     def run(self, para, text, size=None, color=None, bold=None, font=None):
@@ -93,8 +102,8 @@ class Primitives:
             r.font.color.rgb = self._resolve_color(color)
         if bold is not None:
             r.font.bold = bold
-        if font is not None:
-            r.font.name = font
+        # Always stamp font on runs — fall back to theme body font.
+        r.font.name = font if font is not None else self.theme.font_body
         return r
 
     def bullets(self, slide, left, top, width, height, items,
@@ -220,6 +229,9 @@ class Primitives:
                 p = cell.text_frame.paragraphs[0]
                 p.font.name = self.theme.font_body
                 p.font.size = Pt(font_size)
+                # Stamp font on the run — see text_box() comment.
+                if p.runs:
+                    p.runs[0].font.name = self.theme.font_body
                 cell.margin_left = Inches(0.1)
                 cell.margin_top = Inches(0.04)
                 cell.margin_bottom = Inches(0.04)
