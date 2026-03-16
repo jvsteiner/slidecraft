@@ -2,7 +2,8 @@
 QuoteLayout — featured quote with attribution.
 
 Content zones:
-    title (optional), quote, attribution, role (optional), photo (optional)
+    title (optional), quote, attribution, role (optional), photo (optional),
+    footer (optional)
 """
 from .base import BaseLayout
 
@@ -60,3 +61,9 @@ class QuoteLayout(BaseLayout):
             photo_top = y + 0.5
             p.image(slide, photo_path, photo_left, photo_top,
                     photo_size, photo_size)
+
+        # Footer (optional)
+        footer = content.get('footer')
+        if footer:
+            p.text_box(slide, m, 6.8, cw, 0.3,
+                       footer, size=12, color='text_dim', align='left')

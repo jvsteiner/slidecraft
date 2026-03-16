@@ -2,7 +2,8 @@
 MetricsLayout — large hero metrics displayed horizontally.
 
 Content zones:
-    title, subtitle, metrics (list of {value, label, context})
+    title, subtitle, metrics (list of {value, label, context}),
+    body (optional list of strings), footer (optional string)
 """
 from .base import BaseLayout
 
@@ -40,6 +41,23 @@ class MetricsLayout(BaseLayout):
                 col_left = m + i * (col_width + gutter)
                 self._render_metric(p, slide, metric,
                                     col_left, y + 0.5, col_width)
+
+        # Body text (optional) — rendered below metrics
+        body = content.get('body', [])
+        if body:
+            body_y = y + 2.8
+            for line in body:
+                p.text_box(slide, m, body_y, cw, 0.35,
+                           line, size=16, color='text_secondary',
+                           align='left')
+                body_y += 0.45
+
+        # Footer (optional)
+        footer = content.get('footer')
+        if footer:
+            p.text_box(slide, m, 6.8, cw, 0.3,
+                       footer, size=12, color='text_dim',
+                       align='left')
 
     def _render_metric(self, p, slide, metric, left, top, width):
         """Render a single metric block."""

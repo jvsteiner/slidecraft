@@ -38,6 +38,12 @@ class _ThreeColEqualBase(BaseLayout):
                 render_text_zone(p, slide, col_x, body_top,
                                  col_w, body_h, col_content)
 
+        # Footer (optional)
+        footer = content.get('footer')
+        if footer:
+            p.text_box(slide, m, 6.8, cw, 0.3,
+                       footer, size=12, color='text_dim', align='left')
+
 
 class ThreeColTextTextText(_ThreeColEqualBase):
     name = 'three_col_text_text_text'

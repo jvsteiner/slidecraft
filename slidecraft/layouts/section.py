@@ -1,7 +1,7 @@
 """
 SectionLayout — section break / divider slide.
 
-Content zones: title, subtitle, number
+Content zones: title, subtitle, number, body (optional), footer (optional)
 Vertically centered content with optional large section number.
 """
 from .base import BaseLayout
@@ -39,3 +39,17 @@ class SectionLayout(BaseLayout):
                        content['subtitle'],
                        size=24, color='text_muted',
                        align='center')
+            y += 0.7
+
+        # Body (optional)
+        if content.get('body'):
+            p.text_box(slide, m + cw * 0.15, y, cw * 0.7, 1.0,
+                       content['body'],
+                       size=18, color='text_secondary',
+                       align='center', line_spacing=1.4)
+
+        # Footer (optional)
+        footer = content.get('footer')
+        if footer:
+            p.text_box(slide, m, 6.8, cw, 0.3,
+                       footer, size=12, color='text_dim', align='center')

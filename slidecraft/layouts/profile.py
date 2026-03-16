@@ -2,7 +2,8 @@
 ProfileLayout — team member or speaker profiles.
 
 Content zones:
-    title, profiles (list of {photo, name, role, bio, company})
+    title, profiles (list of {photo, name, role, bio, company}),
+    footer (optional)
 """
 from .base import BaseLayout
 
@@ -28,6 +29,12 @@ class ProfileLayout(BaseLayout):
             self._render_single(db, slide, profiles[0], m, y, cw)
         else:
             self._render_grid(db, slide, profiles, m, y, cw)
+
+        # Footer (optional)
+        footer = content.get('footer')
+        if footer:
+            p.text_box(slide, m, 6.8, cw, 0.3,
+                       footer, size=12, color='text_dim', align='left')
 
     def _render_single(self, db, slide, profile, m, y, cw):
         """Large single-profile layout: photo left, info right."""

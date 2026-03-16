@@ -3,7 +3,7 @@ ClosingLayout — closing slide with CTA and contact info.
 
 Content zones:
     title, headline, bullets (optional), contact (optional),
-    closing (optional)
+    closing (optional), footer (optional)
 """
 from .base import BaseLayout
 
@@ -77,3 +77,9 @@ class ClosingLayout(BaseLayout):
             p.text_box(slide, m, 6.5, cw, 0.4,
                        closing_text, size=16, color='text_dim',
                        align='center')
+
+        # Footer (optional)
+        footer = content.get('footer')
+        if footer:
+            p.text_box(slide, m, 6.8, cw, 0.3,
+                       footer, size=12, color='text_dim', align='center')

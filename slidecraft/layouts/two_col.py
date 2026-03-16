@@ -49,6 +49,12 @@ class _TwoColBase(BaseLayout):
                      right_x, body_top, right_w, body_h,
                      content.get('right', ''))
 
+        # Footer (optional)
+        footer = content.get('footer')
+        if footer:
+            p.text_box(slide, m, 6.8, cw, 0.3,
+                       footer, size=12, color='text_dim', align='left')
+
 
 def _render_zone(zone_type, p, db, slide, x, y, w, h, content):
     if zone_type == 'image':

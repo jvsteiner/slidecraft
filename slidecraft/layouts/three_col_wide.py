@@ -54,6 +54,12 @@ class _ThreeColWideBase(BaseLayout):
             render_text_zone(p, slide, wide_x, body_top,
                              wide_w, body_h, wide_content)
 
+        # Footer (optional)
+        footer = content.get('footer')
+        if footer:
+            p.text_box(slide, m, 6.8, cw, 0.3,
+                       footer, size=12, color='text_dim', align='left')
+
 
 class ThreeColImageDtext(_ThreeColWideBase):
     name = 'three_col_image_dtext'

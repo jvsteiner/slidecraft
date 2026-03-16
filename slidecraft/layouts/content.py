@@ -1,7 +1,7 @@
 """
 ContentLayout — standard body slide with header and text/bullets.
 
-Content zones: title, subtitle, body (str or list), variant
+Content zones: title, subtitle, body (str or list), variant, footer (optional)
 Variant: 'bullets' (default for lists), 'numbered', 'plain' (default for strings)
 """
 from .base import BaseLayout
@@ -44,3 +44,9 @@ class ContentLayout(BaseLayout):
             p.text_box(slide, m, y + 0.1, cw, 5.0 - y,
                        str(body), size=20, color='text_secondary',
                        line_spacing=1.4)
+
+        # Footer (optional)
+        footer = content.get('footer')
+        if footer:
+            p.text_box(slide, m, 6.8, cw, 0.3,
+                       footer, size=12, color='text_dim', align='left')

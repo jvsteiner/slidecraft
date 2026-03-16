@@ -3,7 +3,7 @@ ComparisonLayout — side-by-side comparison table.
 
 Content zones:
     title, subtitle, headers (list), rows (list of lists),
-    highlight_column (optional int)
+    highlight_column (optional int), footer (optional)
 """
 from .base import BaseLayout
 
@@ -69,3 +69,9 @@ class ComparisonLayout(BaseLayout):
                 cell = tbl.cell(row_idx, highlight_col)
                 for para in cell.text_frame.paragraphs:
                     para.font.bold = True
+
+        # Footer (optional)
+        footer = content.get('footer')
+        if footer:
+            p.text_box(slide, m, 6.8, cw, 0.3,
+                       footer, size=12, color='text_dim', align='left')
