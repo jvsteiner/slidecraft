@@ -42,6 +42,15 @@ def generate_css(theme: Theme) -> str:
 }
 .reveal .slides section * { box-sizing: border-box; }
 
+/* Vertical centering wrapper — use inside <section>, never flex on section itself */
+.sc-center-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
 /* Reset reveal.js heading defaults */
 .reveal .slides section h1,
 .reveal .slides section h2,
