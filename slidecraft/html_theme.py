@@ -37,6 +37,7 @@ body, .reveal { background-color: var(--color-bg) !important; }
   padding: 40px 50px;
   box-sizing: border-box;
   overflow: hidden;
+  height: 720px !important;
 }
 .reveal .slides section * { box-sizing: border-box; }
 
