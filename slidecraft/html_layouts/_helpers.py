@@ -34,8 +34,7 @@ def render_text_zone(content, theme: Theme) -> str:
     if isinstance(content, str):
         return (
             f'<div class="sc-text-zone">'
-            f'<p style="color:var(--color-text-secondary)">'
-            f'{escape(content)}</p></div>'
+            f'<p>{escape(content)}</p></div>'
         )
 
     if not isinstance(content, dict):
@@ -43,15 +42,9 @@ def render_text_zone(content, theme: Theme) -> str:
 
     parts = ['<div class="sc-text-zone">']
     if content.get('heading'):
-        parts.append(
-            f'<h3 style="color:var(--color-primary);font-weight:700">'
-            f'{escape(content["heading"])}</h3>'
-        )
+        parts.append(f'<h3>{escape(content["heading"])}</h3>')
     if content.get('body'):
-        parts.append(
-            f'<p style="color:var(--color-text-secondary)">'
-            f'{escape(content["body"])}</p>'
-        )
+        parts.append(f'<p>{escape(content["body"])}</p>')
     elif content.get('bullets'):
         parts.append('<ul>')
         for item in content['bullets']:
@@ -64,7 +57,7 @@ def render_text_zone(content, theme: Theme) -> str:
                 if detail:
                     li += (
                         f'<br><span style="color:var(--color-text-muted);'
-                        f'font-size:0.9em">{detail}</span>'
+                        f'font-size:14px">{detail}</span>'
                     )
                 li += '</li>'
                 parts.append(li)

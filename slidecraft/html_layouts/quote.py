@@ -27,14 +27,14 @@ def render(content, slide_num, theme, resolve_image):
         parts.append('<div style="flex:1">')
 
     # Decorative quote mark
-    parts.append(f'<div style="font-size:4em;color:var(--color-primary);font-weight:700;line-height:1;margin-bottom:-8px">\u201C</div>')
+    parts.append(f'<div style="font-size:56px;color:var(--color-primary);font-weight:700;line-height:1;margin-bottom:-4px">\u201C</div>')
     # Quote text
-    parts.append(f'<p style="font-size:1.4em;color:var(--color-text);line-height:1.5;margin:0 0 16px 24px">{escape(quote_text)}</p>')
+    parts.append(f'<p style="font-size:22px;color:var(--color-text);line-height:1.5;margin:0 0 12px 20px">{escape(quote_text)}</p>')
     # Attribution
     attr_text = f'\u2014 {escape(attribution)}'
     if role:
         attr_text += f', {escape(role)}'
-    parts.append(f'<p style="color:var(--color-text-muted);font-size:0.9em;margin:0 0 0 24px">{attr_text}</p>')
+    parts.append(f'<p style="color:var(--color-text-muted);font-size:15px;margin:0 0 0 20px">{attr_text}</p>')
 
     if has_photo:
         parts.append('</div>')  # close text column

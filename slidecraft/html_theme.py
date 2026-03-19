@@ -24,99 +24,160 @@ def generate_css(theme: Theme) -> str:
     lines.append('}')
     lines.append('')
 
-    # Base slide styles
-    lines.append('.reveal .slides section {')
-    lines.append('  background-color: var(--color-bg);')
-    lines.append('  color: var(--color-text);')
-    lines.append('  font-family: var(--font-body), sans-serif;')
-    lines.append('}')
-    lines.append('')
+    # Override reveal.js defaults — lock slides to fixed dimensions
+    lines.append("""
+.reveal .slides section {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body), sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  text-align: left;
+  padding: 48px 56px;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.reveal .slides section * { box-sizing: border-box; }
 
-    # Headings
-    lines.append('.reveal .slides section h1,')
-    lines.append('.reveal .slides section h2,')
-    lines.append('.reveal .slides section h3 {')
-    lines.append('  font-family: var(--font-display), sans-serif;')
-    lines.append('  color: var(--color-text);')
-    lines.append('}')
-    lines.append('')
+/* Reset reveal.js heading defaults */
+.reveal .slides section h1,
+.reveal .slides section h2,
+.reveal .slides section h3,
+.reveal .slides section h4 {
+  font-family: var(--font-display), sans-serif;
+  color: var(--color-text);
+  text-transform: none;
+  letter-spacing: normal;
+  text-shadow: none;
+  word-wrap: break-word;
+  margin: 0;
+}
+.reveal .slides section p { margin: 0; }
+.reveal .slides section ul,
+.reveal .slides section ol { margin: 0; }
 
-    # Utility classes
-    lines.append('.sc-accent-bar {')
-    lines.append('  background-color: var(--color-primary);')
-    lines.append('  height: 4px;')
-    lines.append('  width: 100%;')
-    lines.append('}')
-    lines.append('')
+/* Accent bar */
+.sc-accent-bar {
+  background-color: var(--color-primary);
+  height: 4px;
+  width: 60px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
 
-    lines.append('.sc-footer {')
-    lines.append('  position: absolute;')
-    lines.append('  bottom: 0;')
-    lines.append('  left: 0;')
-    lines.append('  right: 0;')
-    lines.append('  font-size: 0.6em;')
-    lines.append('  color: var(--color-text_muted);')
-    lines.append('  padding: 0.4em 1em;')
-    lines.append('}')
-    lines.append('')
+/* Footer */
+.sc-footer {
+  position: absolute;
+  bottom: 20px;
+  left: 56px;
+  right: 56px;
+  font-size: 12px;
+  color: var(--color-text_muted);
+}
 
-    lines.append('.sc-slide-num {')
-    lines.append('  position: absolute;')
-    lines.append('  bottom: 0.4em;')
-    lines.append('  right: 1em;')
-    lines.append('  font-size: 0.6em;')
-    lines.append('  color: var(--color-text_dim);')
-    lines.append('}')
-    lines.append('')
+/* Slide number */
+.sc-slide-num {
+  position: absolute;
+  bottom: 20px;
+  right: 56px;
+  font-size: 13px;
+  color: var(--color-text_dim);
+}
 
-    lines.append('.sc-header-title {')
-    lines.append('  font-family: var(--font-display), sans-serif;')
-    lines.append('  font-size: 2em;')
-    lines.append('  font-weight: bold;')
-    lines.append('  color: var(--color-text);')
-    lines.append('}')
-    lines.append('')
+/* Slide header */
+.sc-header-title {
+  font-family: var(--font-display), sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--color-text);
+  margin: 0 0 2px 0;
+}
+.sc-header-subtitle {
+  font-size: 18px;
+  color: var(--color-text_secondary);
+  margin: 0 0 16px 0;
+}
 
-    lines.append('.sc-header-subtitle {')
-    lines.append('  font-family: var(--font-display), sans-serif;')
-    lines.append('  font-size: 1.2em;')
-    lines.append('  color: var(--color-text_secondary);')
-    lines.append('}')
-    lines.append('')
+/* Grid */
+.sc-grid {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+}
 
-    lines.append('.sc-grid {')
-    lines.append('  display: grid;')
-    lines.append('  gap: 1em;')
-    lines.append('  width: 100%;')
-    lines.append('  height: 100%;')
-    lines.append('}')
-    lines.append('')
+/* Text zones */
+.sc-text-zone { }
+.sc-text-zone h3 {
+  font-family: var(--font-display), sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0 0 8px 0;
+}
+.sc-text-zone p {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0 0 6px 0;
+}
+.sc-text-zone ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sc-text-zone ul li {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+.sc-text-zone ul li::before {
+  content: "\\2022 ";
+}
 
-    lines.append('.sc-text-zone {')
-    lines.append('  padding: 1em;')
-    lines.append('}')
-    lines.append('')
+/* Images */
+.sc-img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+.sc-caption {
+  font-size: 12px;
+  color: var(--color-text_muted);
+  text-align: center;
+  margin-top: 4px;
+}
 
-    lines.append('.sc-img {')
-    lines.append('  max-width: 100%;')
-    lines.append('  height: auto;')
-    lines.append('  object-fit: cover;')
-    lines.append('}')
-    lines.append('')
+/* Overlay for background images */
+.sc-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.sc-overlay ~ * { position: relative; z-index: 2; }
 
-    lines.append('.sc-caption {')
-    lines.append('  font-size: 0.7em;')
-    lines.append('  color: var(--color-text_muted);')
-    lines.append('  text-align: center;')
-    lines.append('  margin-top: 0.3em;')
-    lines.append('}')
-    lines.append('')
-
-    lines.append('.sc-overlay {')
-    lines.append('  position: absolute;')
-    lines.append('  inset: 0;')
-    lines.append('  background: rgba(0, 0, 0, 0.4);')
-    lines.append('}')
+/* Tables */
+.sc-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+}
+.sc-table th,
+.sc-table td {
+  padding: 8px 14px;
+  text-align: left;
+}
+.sc-table th {
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-surface);
+}
+""")
 
     return '\n'.join(lines)
 
