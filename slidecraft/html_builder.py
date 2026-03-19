@@ -126,11 +126,13 @@ Reveal.initialize({{
   hash: true,
   controls: true,
   progress: true,
-  center: false,
+  center: true,
   transition: 'none',
   width: 1280,
   height: 720,
-  margin: 0
+  margin: 0.04,
+  minScale: 0.2,
+  maxScale: 1.0
 }});
 </script>
 </body>

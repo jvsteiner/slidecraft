@@ -24,21 +24,19 @@ def generate_css(theme: Theme) -> str:
     lines.append('}')
     lines.append('')
 
-    # Override reveal.js defaults — lock slides to fixed dimensions
+    # Override reveal.js defaults
     lines.append("""
+body, .reveal { background-color: var(--color-bg) !important; }
 .reveal .slides section {
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body), sans-serif;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 1.4;
   text-align: left;
-  padding: 48px 56px;
+  padding: 40px 50px;
   box-sizing: border-box;
   overflow: hidden;
-  height: 100%;
-  width: 100%;
-  position: relative;
 }
 .reveal .slides section * { box-sizing: border-box; }
 
@@ -99,13 +97,13 @@ def generate_css(theme: Theme) -> str:
 /* Slide header */
 .sc-header-title {
   font-family: var(--font-display), sans-serif;
-  font-size: 32px;
+  font-size: 40px;
   font-weight: bold;
   color: var(--color-text);
-  margin: 0 0 2px 0;
+  margin: 0 0 4px 0;
 }
 .sc-header-subtitle {
-  font-size: 18px;
+  font-size: 22px;
   color: var(--color-text_secondary);
   margin: 0 0 16px 0;
 }
@@ -121,16 +119,16 @@ def generate_css(theme: Theme) -> str:
 .sc-text-zone { }
 .sc-text-zone h3 {
   font-family: var(--font-display), sans-serif;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--color-primary);
-  margin: 0 0 8px 0;
+  margin: 0 0 10px 0;
 }
 .sc-text-zone p {
-  font-size: 16px;
+  font-size: 20px;
   color: var(--color-text-secondary);
   line-height: 1.5;
-  margin: 0 0 6px 0;
+  margin: 0 0 8px 0;
 }
 .sc-text-zone ul {
   list-style: none;
@@ -138,9 +136,9 @@ def generate_css(theme: Theme) -> str:
   margin: 0;
 }
 .sc-text-zone ul li {
-  font-size: 16px;
+  font-size: 20px;
   color: var(--color-text-secondary);
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   line-height: 1.4;
 }
 .sc-text-zone ul li::before {

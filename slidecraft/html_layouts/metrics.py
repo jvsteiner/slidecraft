@@ -20,10 +20,10 @@ def render(content, slide_num, theme, resolve_image):
         context = metric.get('context', '')
 
         parts.append('<div>')
-        parts.append(f'<div style="font-family:var(--font-display);font-size:36px;font-weight:700;color:var(--color-primary)">{escape(value)}</div>')
-        parts.append(f'<div style="font-size:15px;color:var(--color-text-secondary);margin-top:8px">{escape(label)}</div>')
+        parts.append(f'<div style="font-family:var(--font-display);font-size:44px;font-weight:700;color:var(--color-primary)">{escape(value)}</div>')
+        parts.append(f'<div style="font-size:20px;color:var(--color-text-secondary);margin-top:8px">{escape(label)}</div>')
         if context:
-            parts.append(f'<div style="font-size:13px;color:var(--color-text-muted);margin-top:4px">{escape(context)}</div>')
+            parts.append(f'<div style="font-size:16px;color:var(--color-text-muted);margin-top:4px">{escape(context)}</div>')
         parts.append('</div>')
 
     parts.append('</div>')
@@ -33,7 +33,7 @@ def render(content, slide_num, theme, resolve_image):
     if body:
         parts.append('<div style="margin-top:32px">')
         for line in body:
-            parts.append(f'<p style="color:var(--color-text-secondary);font-size:14px;margin:0 0 6px 0">{escape(line)}</p>')
+            parts.append(f'<p style="color:var(--color-text-secondary);font-size:18px;margin:0 0 6px 0">{escape(line)}</p>')
         parts.append('</div>')
 
     footer = content.get('footer')
