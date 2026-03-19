@@ -11,7 +11,8 @@ Programmatic usage:
     db.save('output.pptx')
 """
 from .builder import DeckBuilder
+from .html_builder import HtmlBuilder
 from .theme import Theme
 from .layouts import get_layout, list_layouts
 
-__all__ = ['DeckBuilder', 'Theme', 'get_layout', 'list_layouts']
+__all__ = ['DeckBuilder', 'HtmlBuilder', 'Theme', 'get_layout', 'list_layouts']
