@@ -7,16 +7,17 @@ Two zone types:
 """
 
 
-def render_text_zone(p, slide, x, y, width, height, content):
+def render_text_zone(p, slide, x, y, width, height, content, font_size=None):
     """Render a text zone: optional heading + body/bullets.
 
     Content can be:
       - str: plain paragraph
       - dict: {heading, body, bullets}
     """
+    sz = font_size or 18
     if isinstance(content, str):
         p.text_box(slide, x, y, width, height, content,
-                   size=18, color='text_secondary', line_spacing=1.4)
+                   size=sz, color='text_secondary', line_spacing=1.4)
         return
     if not isinstance(content, dict):
         return
@@ -31,11 +32,11 @@ def render_text_zone(p, slide, x, y, width, height, content):
 
     if content.get('body'):
         p.text_box(slide, x, zone_y, width, remaining,
-                   content['body'], size=18, color='text_secondary',
+                   content['body'], size=sz, color='text_secondary',
                    line_spacing=1.4)
     elif content.get('bullets'):
         p.bullets(slide, x, zone_y, width, remaining,
-                  content['bullets'], bullet_size=18,
+                  content['bullets'], bullet_size=sz,
                   bullet_color='text_secondary')
 
 

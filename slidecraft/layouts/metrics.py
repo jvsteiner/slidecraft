@@ -45,10 +45,11 @@ class MetricsLayout(BaseLayout):
         # Body text (optional) — rendered below metrics
         body = content.get('body', [])
         if body:
+            font_size = content.get('font_size', 16)
             body_y = y + 2.8
             for line in body:
                 p.text_box(slide, m, body_y, cw, 0.35,
-                           line, size=16, color='text_secondary',
+                           line, size=font_size, color='text_secondary',
                            align='left')
                 body_y += 0.45
 

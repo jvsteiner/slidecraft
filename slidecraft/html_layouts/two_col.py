@@ -16,18 +16,19 @@ def _render(content, slide_num, theme, resolve_image, left_type, right_type):
     parts.append(render_slide_header(slide_num, content.get('title', ''), content.get('subtitle'), theme))
     parts.append(f'<div class="sc-grid" style="grid-template-columns:{grid_cols};margin-top:24px;align-items:start">')
 
+    font_size = content.get('font_size')
     left_content = content.get('left', '')
     right_content = content.get('right', '')
 
     if left_type == 'image':
         parts.append(f'<div>{render_image_zone(left_content, resolve_image)}</div>')
     else:
-        parts.append(render_text_zone(left_content, theme))
+        parts.append(render_text_zone(left_content, theme, font_size=font_size))
 
     if right_type == 'image':
         parts.append(f'<div>{render_image_zone(right_content, resolve_image)}</div>')
     else:
-        parts.append(render_text_zone(right_content, theme))
+        parts.append(render_text_zone(right_content, theme, font_size=font_size))
 
     parts.append('</div>')
     footer = content.get('footer')

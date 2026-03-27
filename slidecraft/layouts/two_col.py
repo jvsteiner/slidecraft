@@ -42,12 +42,13 @@ class _TwoColBase(BaseLayout):
         body_top = y + 0.2
         body_h = 4.5
 
+        font_size = content.get('font_size')
         _render_zone(self.left_type, p, db, slide,
                      left_x, body_top, left_w, body_h,
-                     content.get('left', ''))
+                     content.get('left', ''), font_size=font_size)
         _render_zone(self.right_type, p, db, slide,
                      right_x, body_top, right_w, body_h,
-                     content.get('right', ''))
+                     content.get('right', ''), font_size=font_size)
 
         # Footer (optional)
         footer = content.get('footer')
@@ -56,11 +57,11 @@ class _TwoColBase(BaseLayout):
                        footer, size=12, color='text_dim', align='left')
 
 
-def _render_zone(zone_type, p, db, slide, x, y, w, h, content):
+def _render_zone(zone_type, p, db, slide, x, y, w, h, content, font_size=None):
     if zone_type == 'image':
         render_image_zone(p, db, slide, x, y, w, h, content)
     else:
-        render_text_zone(p, slide, x, y, w, h, content)
+        render_text_zone(p, slide, x, y, w, h, content, font_size=font_size)
 
 
 class TwoColTextText(_TwoColBase):

@@ -29,18 +29,19 @@ def render_slide_header(slide_num: int, title: str, subtitle: str | None,
     return '\n'.join(parts)
 
 
-def render_text_zone(content, theme: Theme) -> str:
+def render_text_zone(content, theme: Theme, font_size=None) -> str:
     """Render a text zone: string or {heading, body, bullets}."""
+    fs_attr = f' style="font-size:{font_size}px"' if font_size else ''
     if isinstance(content, str):
         return (
-            f'<div class="sc-text-zone">'
+            f'<div class="sc-text-zone"{fs_attr}>'
             f'<p>{escape(content)}</p></div>'
         )
 
     if not isinstance(content, dict):
         return ''
 
-    parts = ['<div class="sc-text-zone">']
+    parts = [f'<div class="sc-text-zone"{fs_attr}>']
     if content.get('heading'):
         parts.append(f'<h3>{escape(content["heading"])}</h3>')
     if content.get('body'):

@@ -55,12 +55,13 @@ class ComparisonLayout(BaseLayout):
 
         table_height = min(0.4 * len(table_data), 7.5 - y - 0.5)
 
+        font_size = content.get('font_size', 16)
         tbl_shape = p.table(slide, m, y + 0.2, cw, table_height,
                             table_data, col_widths=col_widths,
                             header_color='primary',
                             text_color_fn=text_color_fn,
                             align_fn=align_fn,
-                            font_size=16)
+                            font_size=font_size)
 
         # Bold the highlight column values
         if highlight_col is not None:

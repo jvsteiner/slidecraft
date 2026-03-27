@@ -63,12 +63,13 @@ class DataTableLayout(BaseLayout):
                 return 'left'
             return 'center'
 
+        font_size = content.get('font_size', 16)
         tbl_shape = p.table(slide, m, table_top, table_width, table_height,
                             table_data, col_widths=col_widths,
                             header_color='primary',
                             text_color_fn=text_color_fn,
                             align_fn=align_fn,
-                            font_size=16)
+                            font_size=font_size)
 
         # Bold + larger font for highlight row
         if highlight_row is not None:
@@ -93,7 +94,7 @@ class DataTableLayout(BaseLayout):
                       items=sidebar.get('items', []),
                       title=sidebar.get('title'),
                       title_size=18, title_color='primary',
-                      bullet_size=16, bullet_color='text_secondary')
+                      bullet_size=font_size, bullet_color='text_secondary')
 
         # Footer
         if footer:

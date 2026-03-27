@@ -31,9 +31,10 @@ def render(content, slide_num, theme, resolve_image):
     # Body text (optional)
     body = content.get('body', [])
     if body:
+        font_size = content.get('font_size', 18)
         parts.append('<div style="margin-top:32px">')
         for line in body:
-            parts.append(f'<p style="color:var(--color-text-secondary);font-size:18px;margin:0 0 6px 0">{escape(line)}</p>')
+            parts.append(f'<p style="color:var(--color-text-secondary);font-size:{font_size}px;margin:0 0 6px 0">{escape(line)}</p>')
         parts.append('</div>')
 
     footer = content.get('footer')

@@ -100,6 +100,7 @@ Standard body slide with header and text or bullets.
 - layout: content
   title: "Slide Title"
   subtitle: "Optional subtitle"     # optional
+  font_size: 16                     # optional, body text size in pt (default: 20)
   body: "Plain text paragraph"
   # OR bullet list:
   body:
@@ -497,6 +498,27 @@ theme:
     danger: "#E11D48"
     success: "#059669"
     warning: "#EA580C"
+```
+
+## Per-Slide Font Size
+
+Any text-heavy layout accepts an optional `font_size` key (in points) to override the default body text size. This is useful when you need to fit more content on a slide.
+
+| Layout group | Default | Key |
+|---|---|---|
+| content | 20 | `font_size` |
+| two_col_*, three_col_* | 18 | `font_size` |
+| section | 18 | `font_size` |
+| metrics (body) | 16 | `font_size` |
+| comparison, data_table | 16 | `font_size` |
+
+```yaml
+- layout: content
+  title: "Dense Slide"
+  font_size: 16
+  body:
+    - "More text fits at smaller sizes"
+    - "Works on any text-heavy layout"
 ```
 
 ## Theme Tips

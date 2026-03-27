@@ -27,6 +27,7 @@ class _ThreeColEqualBase(BaseLayout):
         body_top = y + 0.2
         body_h = 4.5
 
+        font_size = content.get('font_size')
         keys = ('left', 'center', 'right')
         for i, (key, zone_type) in enumerate(zip(keys, self.zone_types)):
             col_x = m + i * (col_w + gutter)
@@ -36,7 +37,8 @@ class _ThreeColEqualBase(BaseLayout):
                                   col_w, body_h, col_content)
             else:
                 render_text_zone(p, slide, col_x, body_top,
-                                 col_w, body_h, col_content)
+                                 col_w, body_h, col_content,
+                                 font_size=font_size)
 
         # Footer (optional)
         footer = content.get('footer')

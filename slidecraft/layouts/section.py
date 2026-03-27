@@ -43,9 +43,10 @@ class SectionLayout(BaseLayout):
 
         # Body (optional)
         if content.get('body'):
+            font_size = content.get('font_size', 18)
             p.text_box(slide, m + cw * 0.15, y, cw * 0.7, 1.0,
                        content['body'],
-                       size=18, color='text_secondary',
+                       size=font_size, color='text_secondary',
                        align='center', line_spacing=1.4)
 
         # Footer (optional)

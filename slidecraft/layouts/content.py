@@ -15,6 +15,7 @@ class ContentLayout(BaseLayout):
         p = db.p
         m = db.theme.margin
         cw = self._content_width(db)
+        font_size = content.get('font_size', 20)
 
         y = p.slide_header(slide, slide_num,
                            content.get('title', ''),
@@ -30,19 +31,19 @@ class ContentLayout(BaseLayout):
                 items = [f'{i+1}. {item}' for i, item in enumerate(body)]
                 # Render as plain paragraphs (numbered prefix already added)
                 tf = p.text_box(slide, m, y + 0.1, cw, 5.0 - y,
-                                '', size=20, color='text_secondary')
+                                '', size=font_size, color='text_secondary')
                 tf.paragraphs[0].text = ''
                 for item in items:
-                    p.paragraph(tf, item, size=20, color='text_secondary',
+                    p.paragraph(tf, item, size=font_size, color='text_secondary',
                                 space_before=8)
             else:
                 # Default bullets
                 p.bullets(slide, m, y + 0.1, cw, 5.0 - y, body,
-                          bullet_size=20, bullet_color='text_secondary')
+                          bullet_size=font_size, bullet_color='text_secondary')
         else:
             # Plain text paragraph
             p.text_box(slide, m, y + 0.1, cw, 5.0 - y,
-                       str(body), size=20, color='text_secondary',
+                       str(body), size=font_size, color='text_secondary',
                        line_spacing=1.4)
 
         # Footer (optional)

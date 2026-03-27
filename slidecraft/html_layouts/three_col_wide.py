@@ -18,11 +18,12 @@ def _render(content, slide_num, theme, resolve_image, narrow_side, narrow_type, 
     parts.append(render_slide_header(slide_num, content.get('title', ''), content.get('subtitle'), theme))
     parts.append(f'<div class="sc-grid" style="grid-template-columns:{grid_cols};margin-top:24px;align-items:start">')
 
+    font_size = content.get('font_size')
     for zone_content, ztype in [(first_content, first_type), (second_content, second_type)]:
         if ztype == 'image':
             parts.append(f'<div>{render_image_zone(zone_content, resolve_image)}</div>')
         else:
-            parts.append(render_text_zone(zone_content, theme))
+            parts.append(render_text_zone(zone_content, theme, font_size=font_size))
 
     parts.append('</div>')
     footer = content.get('footer')

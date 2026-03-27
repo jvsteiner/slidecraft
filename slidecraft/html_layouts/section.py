@@ -11,7 +11,8 @@ def render(content, slide_num, theme, resolve_image):
     if content.get('subtitle'):
         parts.append(f'<p style="font-size:22px;color:var(--color-text-muted);margin:8px 0 0 0">{escape(content["subtitle"])}</p>')
     if content.get('body'):
-        parts.append(f'<p style="font-size:20px;color:var(--color-text-secondary);margin:14px auto 0 auto;max-width:70%;line-height:1.5">{escape(content["body"])}</p>')
+        font_size = content.get('font_size', 20)
+        parts.append(f'<p style="font-size:{font_size}px;color:var(--color-text-secondary);margin:14px auto 0 auto;max-width:70%;line-height:1.5">{escape(content["body"])}</p>')
     parts.append('</div>')  # close sc-center-wrap
     footer = content.get('footer')
     if footer:

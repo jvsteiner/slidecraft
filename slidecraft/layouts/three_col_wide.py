@@ -37,6 +37,7 @@ class _ThreeColWideBase(BaseLayout):
             wide_x = m
             narrow_x = m + wide_w + gutter
 
+        font_size = content.get('font_size')
         narrow_content = content.get('narrow', '')
         wide_content = content.get('wide', '')
 
@@ -45,14 +46,16 @@ class _ThreeColWideBase(BaseLayout):
                               narrow_w, body_h, narrow_content)
         else:
             render_text_zone(p, slide, narrow_x, body_top,
-                             narrow_w, body_h, narrow_content)
+                             narrow_w, body_h, narrow_content,
+                             font_size=font_size)
 
         if self.wide_type == 'image':
             render_image_zone(p, db, slide, wide_x, body_top,
                               wide_w, body_h, wide_content)
         else:
             render_text_zone(p, slide, wide_x, body_top,
-                             wide_w, body_h, wide_content)
+                             wide_w, body_h, wide_content,
+                             font_size=font_size)
 
         # Footer (optional)
         footer = content.get('footer')
